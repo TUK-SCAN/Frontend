@@ -1,6 +1,7 @@
 import '../styles/globals.css'
 import '../styles/reset.css'
-import QueryProvider from './_components/QueryProvider' // React Query 클라이언트 설정을 분리
+import QueryProvider from './_components/QueryProvider'
+import SpriteSheet from '@/app/_components/icon/SpriteSheet'
 
 export default function RootLayout({
   children,
@@ -10,6 +11,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
+        {SpriteSheet}
         <div>
           <QueryProvider>{children}</QueryProvider>
         </div>
