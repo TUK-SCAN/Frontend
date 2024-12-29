@@ -1,6 +1,6 @@
 import '../styles/globals.css'
 import '../styles/reset.css'
-import QueryProvider from '../components/QueryProvider' // React Query 클라이언트 설정을 분리
+import QueryProvider from './_components/QueryProvider' // React Query 클라이언트 설정을 분리
 
 export default function RootLayout({
   children,
