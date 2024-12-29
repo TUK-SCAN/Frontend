@@ -21,4 +21,8 @@ export const colors = {
     DEFAULT: '#000000',
   },
   white: '#FFFFFF',
+  status: {
+    success: '#5592FC',
+    error: '#FF5E47',
+  },
 }
