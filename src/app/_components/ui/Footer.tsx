@@ -1,15 +1,22 @@
 'use client'
 
 import React from 'react'
-import Image from 'next/image'
+import Icon from '../icon/Icon' // Icon 컴포넌트 경로를 적절히 수정해주세요.
 
-const Footer: React.FC = () => {
+const Footer = () => {
   return (
-    <footer className="bg-white px-6 py-8 lg:px-[96px] lg:py-[32px]">
+    <footer className="w-full bg-white px-6 py-8 lg:px-[96px] lg:py-[32px]">
       {/* 로고와 슬로건 */}
       <div className="flex flex-col items-start">
         {/* 로고 */}
-        <Image src="/logo.png" alt="Logo" width={60} height={60} />
+        <div className="h-[60px] w-[60px]">
+          <Icon
+            id="logo"
+            width={60}
+            height={60}
+            className="text-blue-primary"
+          />
+        </div>
 
         {/* 슬로건 텍스트 */}
         <div className="mt-4 text-black">
