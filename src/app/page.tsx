@@ -1,8 +1,9 @@
-import Icon from './_components/icon/Icon'
+import Banner from './_components/Banner'
 
 const App = () => {
   return (
     <div>
+      <Banner></Banner>
       hi
     </div>
   )
