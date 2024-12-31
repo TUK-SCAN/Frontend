@@ -107,25 +107,45 @@ const SpriteSheet = (
         </clipPath>
       </defs>
     </symbol>
-    <symbol id="check" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path
-      fillRule="evenodd"
-      d="M16.707 5.293a1 1 0 010 1.414l-7 7a1 1 0 01-1.414 0l-3-3a1 1 0 111.414-1.414L9 11.586l6.293-6.293a1 1 0 011.414 0z"
-      clipRule="evenodd"
-      fill="currentColor"
-    />
-  </symbol>
-  <symbol id="arrow" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path
-      fillRule="evenodd"
-      d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4 4a.75.75 0 01-1.06 0l-4-4a.75.75 0 01.02-1.06z"
-      clipRule="evenodd"
-      fill="currentColor"
-    />
-  </symbol>
+    <symbol
+      id="check"
+      viewBox="0 0 20 20"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        fillRule="evenodd"
+        d="M16.707 5.293a1 1 0 010 1.414l-7 7a1 1 0 01-1.414 0l-3-3a1 1 0 111.414-1.414L9 11.586l6.293-6.293a1 1 0 011.414 0z"
+        clipRule="evenodd"
+        fill="currentColor"
+      />
+    </symbol>
+    <symbol
+      id="arrow"
+      viewBox="0 0 20 20"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        fillRule="evenodd"
+        d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4 4a.75.75 0 01-1.06 0l-4-4a.75.75 0 01.02-1.06z"
+        clipRule="evenodd"
+        fill="currentColor"
+      />
+    </symbol>
+    <svg xmlns="http://www.w3.org/2000/svg">
+      <symbol id="bigcheck" viewBox="0 0 24 24">
+        <rect width="24" height="24" fill="#5592FC" rx="12" />
+        <path
+          stroke="#fff"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="1.8"
+          d="M8 12.5l3 3.5 5.5-8"
+        />
+      </symbol>
+    </svg>
   </svg>
-  
-  
 )
 
 export default SpriteSheet
