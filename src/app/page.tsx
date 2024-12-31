@@ -1,11 +1,13 @@
 import Banner from './_components/Banner'
-import CheckIcon from './_components/BigCheckIcon'
+import BigCheckIcon from './_components/BigCheckIcon'
+import SmallCheckIcon from './_components/SmallCheckIcon'
 
 const App = () => {
   return (
     <div>
       <Banner></Banner>
-      <CheckIcon></CheckIcon>
+      <SmallCheckIcon></SmallCheckIcon>
+      <BigCheckIcon></BigCheckIcon>
       hi
     </div>
   )
