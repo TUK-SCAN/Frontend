@@ -11,7 +11,9 @@ const CheckBox = () => {
       <div className="flex h-[56px] items-center justify-between px-4 py-2">
         <button
           className={`flex h-6 w-6 items-center justify-center rounded-full ${
-            isChecked ? 'bg-blue-500' : 'border border-gray-300 bg-white'
+            isChecked
+              ? 'bg-blue-500 text-white'
+              : 'border border-gray-300 bg-white'
           }`}
           onClick={() => setIsChecked(!isChecked)}
         >
