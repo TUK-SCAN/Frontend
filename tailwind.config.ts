@@ -9,6 +9,16 @@ export default {
   theme: {
     extend: {
       colors,
+      fontFamily: {
+        sans: [
+          'Pretendard',
+          'ui-sans-serif',
+          'system-ui',
+          'Arial',
+          'sans-serif',
+        ], // Pretendard 추가
+        pretendard: ['Pretendard', 'sans-serif'], // 별도 유틸리티 이름 정의
+      },
     },
   },
   plugins: [],
