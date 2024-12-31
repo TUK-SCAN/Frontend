@@ -2,7 +2,7 @@
 import { useState } from 'react'
 import Icon from './icon/Icon'
 
-const CheckBox = () => {
+const Accordion = () => {
   const [isChecked, setIsChecked] = useState(false) // 체크 상태
   const [isOpen, setIsOpen] = useState(false) // 아코디언 열림 상태
 
@@ -17,7 +17,7 @@ const CheckBox = () => {
           }`}
           onClick={() => setIsChecked(!isChecked)}
         >
-          {isChecked && <Icon id="check" width={16} height={16} />}
+          {isChecked && <Icon id="bigcheck" width={16} height={16} />}
         </button>
 
         <span className="flex-1 text-center text-sm text-gray-800">
@@ -48,4 +48,4 @@ const CheckBox = () => {
   )
 }
 
-export default CheckBox
+export default Accordion
