@@ -3,7 +3,6 @@ interface IconProps {
   width?: number
   height?: number
   className?: string
-  color?: string
 }
 
 const Icon = ({ id, width, height, className }: IconProps) => {
