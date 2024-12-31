@@ -4,17 +4,14 @@ import Icon from './icon/Icon'
 
 const CheckBox = () => {
   const [isChecked, setIsChecked] = useState(false) // 체크 상태
-  const [isOpen, setIsOpen] = useState(false) // 드롭다운 열림 상태
+  const [isOpen, setIsOpen] = useState(false) // 아코디언 열림 상태
 
   return (
     <div className="w-[799px] rounded-lg border border-gray-300 shadow-sm">
-      {/* Main Container */}
       <div className="flex h-[56px] items-center justify-between px-4 py-2">
         <button
           className={`flex h-6 w-6 items-center justify-center rounded-full ${
-            isChecked
-              ? 'bg-blue-500 text-white'
-              : 'border border-gray-300 bg-white'
+            isChecked ? 'bg-blue-500' : 'border border-gray-300 bg-white'
           }`}
           onClick={() => setIsChecked(!isChecked)}
         >
@@ -36,11 +33,15 @@ const CheckBox = () => {
         </button>
       </div>
 
-      {isOpen && (
-        <div className="w-full border-t border-gray-300 bg-gray-50 p-4">
-          <p className="text-sm text-gray-800">음 아직 미완성 ㅎㅎ</p>
+      <div
+        className={`overflow-hidden transition-[max-height] duration-300 ${
+          isOpen ? 'max-h-40' : 'max-h-0'
+        }`}
+      >
+        <div className="border-t border-gray-300 bg-gray-50 p-4">
+          <p className="text-sm text-gray-800">아코디언 형식</p>
         </div>
-      )}
+      </div>
     </div>
   )
 }
