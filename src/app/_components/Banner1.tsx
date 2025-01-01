@@ -2,7 +2,7 @@ import Icon from './icon/Icon'
 
 const Banner1 = () => {
   return (
-    <div className="flex h-[200px] w-[1423px] items-center justify-center rounded-lg bg-blue-primary text-white">
+    <div className="flex h-[200px] w-[1423px] items-center justify-center rounded-lg border-0 bg-blue-primary text-white">
       <div className="flex items-center gap-2 space-x-6">
         <div>
           <Icon id="logo" width={150} height={66} />
