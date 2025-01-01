@@ -16,8 +16,11 @@ export default {
           'system-ui',
           'Arial',
           'sans-serif',
-        ], // Pretendard 추가
-        pretendard: ['Pretendard', 'sans-serif'], // 별도 유틸리티 이름 정의
+        ],
+        pretendard: ['Pretendard', 'sans-serif'],
+      },
+      fontSize: {
+        '2xs': '0.625rem',
       },
     },
   },
