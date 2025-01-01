@@ -2,7 +2,7 @@ import Icon from './icon/Icon'
 
 const Banner3 = () => {
   return (
-    <div className="flex h-[200px] w-[1423px] items-center justify-center rounded-lg bg-blue-primary p-8 text-white">
+    <div className="flex h-[200px] w-[1423px] items-center justify-center rounded-lg border-0 bg-blue-primary p-8 text-white">
       {/* Wrapper for Icon and Text */}
       <div className="flex h-full w-[1135px] items-center justify-between px-6">
         {/* Logo Section */}
