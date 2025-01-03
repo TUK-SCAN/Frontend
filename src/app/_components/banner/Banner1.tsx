@@ -1,8 +1,9 @@
-import Icon from './icon/Icon'
+import Icon from '../icon/Icon'
+import Banner from './Banner'
 
 const Banner1 = () => {
   return (
-    <div className="flex h-[200px] w-[1423px] items-center justify-center rounded-lg border-0 bg-blue-primary text-white">
+    <Banner>
       <div className="flex items-center gap-2 space-x-6">
         <div>
           <Icon id="logo" width={150} height={66} />
@@ -17,7 +18,7 @@ const Banner1 = () => {
           </p>
         </div>
       </div>
-    </div>
+    </Banner>
   )
 }
 

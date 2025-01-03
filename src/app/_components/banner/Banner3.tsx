@@ -1,13 +1,9 @@
-import Icon from './icon/Icon'
-
+import Icon from '../icon/Icon'
+import Banner from './Banner'
 const Banner3 = () => {
   return (
-    <div className="flex h-[200px] w-[1423px] items-center justify-center rounded-lg border-0 bg-blue-primary p-8 text-white">
-      {/* Wrapper for Icon and Text */}
+    <Banner>
       <div className="flex h-full w-[1135px] items-center justify-between px-6">
-        {/* Logo Section */}
-
-        {/* Text Section */}
         <div className="flex flex-col justify-center text-left">
           <p className="font-pretendard text-[32px] font-bold leading-[1.5]">
             신청하기
@@ -21,7 +17,7 @@ const Banner3 = () => {
           <Icon id="logo" width={150} height={66} />
         </div>
       </div>
-    </div>
+    </Banner>
   )
 }
 
