@@ -562,6 +562,29 @@ const SpriteSheet = (
         </clipPath>
       </defs>
     </symbol>
+    <symbol id="bigcheck" viewBox="0 0 24 24">
+      <rect width="24" height="24" fill="#5592FC" rx="12" />
+      <path
+        stroke="#fff"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="1.8"
+        d="M8 12.5l3 3.5 5.5-8"
+      />
+    </symbol>
+
+    <symbol
+      id="rightArrow"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 6 10"
+    >
+      <path
+        d="M0.520508 0.519531L5 4.99902L0.520508 9.47852"
+        stroke="#A09FA4"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </symbol>
   </svg>
 )
 
