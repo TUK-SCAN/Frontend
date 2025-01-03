@@ -3,12 +3,9 @@
 import React from 'react'
 import Header from '../_components/ui/Header'
 import Footer from '../_components/ui/Footer'
+import { LayoutProps } from '@/types/common'
 
-export default function UserLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+const Layout = ({ children }: LayoutProps) => {
   return (
     <div className="relative flex min-h-screen flex-col">
       <div className="fixed left-0 top-0 z-50 w-full">
@@ -28,3 +25,5 @@ export default function UserLayout({
     </div>
   )
 }
+
+export default Layout
