@@ -1,13 +1,17 @@
-import { ReactNode } from 'react'
+import Banner1 from './Banner1'
+import Banner2 from './Banner2'
+import Banner3 from './Banner3'
 
-type BannerProps = {
-  children?: ReactNode
+interface BannerProps {
+  type: 1 | 2 | 3
 }
 
-const Banner = ({ children }: BannerProps) => {
+const Banner = ({ type }: BannerProps) => {
   return (
     <div className="flex h-[200px] w-[1423px] items-center justify-center rounded-lg border-0 bg-blue-primary text-white">
-      {children}
+      {type === 1 && <Banner1 />}
+      {type === 2 && <Banner2 />}
+      {type === 3 && <Banner3 />}
     </div>
   )
 }

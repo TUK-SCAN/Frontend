@@ -2,7 +2,7 @@
 import { useState } from 'react'
 import Icon from './icon/Icon'
 
-type CheckButtonProps = {
+interface CheckButtonProps {
   size: 'small' | 'big'
 }
 

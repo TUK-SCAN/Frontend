@@ -1,11 +1,11 @@
 'use client'
-import { useState, ReactNode } from 'react'
+import { useState } from 'react'
 import Icon from './icon/Icon'
 import CheckButton from './CheckButton'
 
-type AccordionProps = {
+interface AccordionProps {
   title: string
-  contents: ReactNode
+  contents: string
 }
 const Accordion = ({ title, contents }: AccordionProps) => {
   const [isOpen, setIsOpen] = useState(false)
@@ -14,9 +14,7 @@ const Accordion = ({ title, contents }: AccordionProps) => {
     <div className="w-[847px] rounded-lg border border-gray-300 shadow-sm">
       <div className="flex h-[56px] items-center justify-between px-4 py-2">
         <CheckButton size="big" />
-        <span className="flex-1 text-start text-[24px] text-gray-800">
-          {title}
-        </span>
+        <span className="flex-1 text-start text-lg text-gray-800">{title}</span>
         <button
           className="flex h-6 w-6 items-center justify-center text-gray-500"
           onClick={() => setIsOpen(!isOpen)}

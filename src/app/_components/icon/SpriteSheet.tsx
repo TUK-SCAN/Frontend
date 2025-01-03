@@ -133,18 +133,6 @@ const SpriteSheet = (
         fill="currentColor"
       />
     </symbol>
-    <svg xmlns="http://www.w3.org/2000/svg">
-      <symbol id="bigcheck" viewBox="0 0 24 24">
-        <rect width="24" height="24" fill="#5592FC" rx="12" />
-        <path
-          stroke="#fff"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="1.8"
-          d="M8 12.5l3 3.5 5.5-8"
-        />
-      </symbol>
-    </svg>
   </svg>
 )
 
