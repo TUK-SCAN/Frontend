@@ -5,12 +5,11 @@ import Link from 'next/link'
 import Icon from '../icon/Icon'
 
 interface HeaderProps {
-  type: 'default' | 'logged-in'
-  userName?: string
-  onLogoClick?: () => void
+  type: 'default' | 'logged-in' // 헤더 타입
+  userName?: string // 로그인한 사용자 이름
 }
 
-const Header: React.FC<HeaderProps> = ({ type, userName, onLogoClick }) => {
+const Header = ({ type, userName }: HeaderProps) => {
   const isMobile = false
   const textSize = isMobile ? 'text-[12px]' : 'text-[14px]'
 
@@ -47,6 +46,7 @@ const Header: React.FC<HeaderProps> = ({ type, userName, onLogoClick }) => {
         )}
         {type === 'logged-in' && (
           <>
+            {/* 사용자 이름 출력 */}
             <span className="text-blue-primary">{userName}</span>
             <span className="text-black">|</span>
             <Link href="/mypage" className="text-black hover:underline">

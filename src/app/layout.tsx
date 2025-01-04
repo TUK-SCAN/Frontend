@@ -1,7 +1,6 @@
 import '../styles/globals.css'
 import '../styles/reset.css'
-import QueryProvider from './_components/QueryProvider'
-import SpriteSheet from '@/app/_components/icon/SpriteSheet'
+import SpriteSheet from './_components/icon/SpriteSheet'
 
 export default function RootLayout({
   children,
@@ -12,9 +11,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         {SpriteSheet}
-        <div>
-          <QueryProvider>{children}</QueryProvider>
-        </div>
+        <main>{children}</main>
       </body>
     </html>
   )
