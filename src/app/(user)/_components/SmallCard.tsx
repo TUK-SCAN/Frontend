@@ -14,7 +14,7 @@ const SmallCard = ({
   iconId,
   title,
   description,
-  size = 'lg', // 기본값은 lg
+  size = 'lg',
 }: SmallCardProps) => {
   return (
     <div
