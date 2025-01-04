@@ -4,12 +4,11 @@ import React from 'react'
 import Icon from '../icon/Icon'
 
 interface HeaderProps {
-  type: 'default' | 'logged-in'
-  userName?: string
-  onLogoClick?: () => void
+  type: 'default' | 'logged-in' // 헤더 타입
+  userName?: string // 로그인한 사용자 이름
 }
 
-const Header: React.FC<HeaderProps> = ({ type, userName, onLogoClick }) => {
+const Header = ({ type, userName }: HeaderProps) => {
   const isMobile = false
   const textSize = isMobile ? 'text-[12px]' : 'text-[14px]'
 
@@ -19,7 +18,13 @@ const Header: React.FC<HeaderProps> = ({ type, userName, onLogoClick }) => {
       style={{ height: isMobile ? '64px' : '90px' }}
     >
       {/* 로고 */}
-      <button onClick={onLogoClick} className="focus:outline-none">
+      <button
+        onClick={() => {
+          // 로고 클릭 시 항상 메인 페이지로 이동
+          window.location.href = '/'
+        }}
+        className="focus:outline-none"
+      >
         <Icon
           id="logo"
           className="text-blue-primary"
@@ -32,22 +37,44 @@ const Header: React.FC<HeaderProps> = ({ type, userName, onLogoClick }) => {
       <div className={`flex items-center gap-4 ${textSize}`}>
         {type === 'default' && (
           <>
-            <button className="text-blue-primary hover:underline">
+            <button
+              className="text-blue-primary hover:underline"
+              onClick={() => (window.location.href = '/login')}
+            >
               로그인
             </button>
             <span className="text-black">|</span>
-            <button className="text-black hover:underline">
+            <button
+              className="text-black hover:underline"
+              onClick={() => (window.location.href = '/guest-order')}
+            >
               비회원 주문조회
             </button>
-            <button className="text-black hover:underline">회원가입</button>
+            <button
+              className="text-black hover:underline"
+              onClick={() => (window.location.href = '/signup')}
+            >
+              회원가입
+            </button>
           </>
         )}
         {type === 'logged-in' && (
           <>
+            {/* 사용자 이름 출력 */}
             <span className="text-blue-primary">{userName}</span>
             <span className="text-black">|</span>
-            <button className="text-black hover:underline">마이페이지</button>
-            <button className="text-black hover:underline">로그아웃</button>
+            <button
+              className="text-black hover:underline"
+              onClick={() => (window.location.href = '/mypage')}
+            >
+              마이페이지
+            </button>
+            <button
+              className="text-black hover:underline"
+              onClick={() => (window.location.href = '/logout')}
+            >
+              로그아웃
+            </button>
           </>
         )}
       </div>
