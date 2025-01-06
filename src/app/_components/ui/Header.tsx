@@ -1,7 +1,7 @@
 'use client'
 
 import React from 'react'
-import Link from 'next/link'
+import Link from 'next/link' // Next.js의 Link 컴포넌트 불러오기
 import Icon from '../icon/Icon'
 
 interface HeaderProps {
