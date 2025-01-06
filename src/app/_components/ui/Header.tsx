@@ -19,17 +19,7 @@ const Header = ({ type, userName }: HeaderProps) => {
       style={{ height: isMobile ? '64px' : '90px' }}
     >
       {/* 로고 */}
-<<<<<<< HEAD
       <Link href="/" className="focus:outline-none">
-=======
-      <button
-        onClick={() => {
-          // 로고 클릭 시 항상 메인 페이지로 이동
-          window.location.href = '/'
-        }}
-        className="focus:outline-none"
-      >
->>>>>>> a0b7c71 (merge: 최신화)
         <Icon
           id="logo"
           className="text-blue-primary"
@@ -42,38 +32,16 @@ const Header = ({ type, userName }: HeaderProps) => {
       <div className={`flex items-center gap-4 ${textSize}`}>
         {type === 'default' && (
           <>
-<<<<<<< HEAD
             <Link href="/login" className="text-blue-primary hover:underline">
-=======
-            <button
-              className="text-blue-primary hover:underline"
-              onClick={() => (window.location.href = '/login')}
-            >
->>>>>>> a0b7c71 (merge: 최신화)
               로그인
             </Link>
             <span className="text-black">|</span>
-<<<<<<< HEAD
             <Link href="/guest-order" className="text-black hover:underline">
               비회원 주문조회
             </Link>
             <Link href="/signup" className="text-black hover:underline">
               회원가입
             </Link>
-=======
-            <button
-              className="text-black hover:underline"
-              onClick={() => (window.location.href = '/guest-order')}
-            >
-              비회원 주문조회
-            </button>
-            <button
-              className="text-black hover:underline"
-              onClick={() => (window.location.href = '/signup')}
-            >
-              회원가입
-            </button>
->>>>>>> a0b7c71 (merge: 최신화)
           </>
         )}
         {type === 'logged-in' && (
@@ -81,27 +49,12 @@ const Header = ({ type, userName }: HeaderProps) => {
             {/* 사용자 이름 출력 */}
             <span className="text-blue-primary">{userName}</span>
             <span className="text-black">|</span>
-<<<<<<< HEAD
             <Link href="/mypage" className="text-black hover:underline">
               마이페이지
             </Link>
             <Link href="/logout" className="text-black hover:underline">
               로그아웃
             </Link>
-=======
-            <button
-              className="text-black hover:underline"
-              onClick={() => (window.location.href = '/mypage')}
-            >
-              마이페이지
-            </button>
-            <button
-              className="text-black hover:underline"
-              onClick={() => (window.location.href = '/logout')}
-            >
-              로그아웃
-            </button>
->>>>>>> a0b7c71 (merge: 최신화)
           </>
         )}
       </div>
