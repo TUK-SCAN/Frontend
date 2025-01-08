@@ -1,6 +1,6 @@
 import clsx from 'clsx'
-import BigCheckIcon from '@/app/_components/BigCheckIcon'
-import Icon from '@/app/_components/icon/Icon'
+import Icon from '@/app/_components/ui/Icon/Icon'
+import CheckButton from '@/app/_components/ui/CheckButton'
 
 interface ConsentLabelProps {
   content: string
@@ -29,7 +29,11 @@ const ConsentLabel = ({
           consentStatus ? 'text-blue-primary' : 'text-black-600'
         )}
       >
-        <BigCheckIcon />
+        <CheckButton
+          size={size}
+          isChecked={consentStatus}
+          setIsChecked={setConsentStatus}
+        />
         <p>{content}</p>
       </div>
       {onClick && (

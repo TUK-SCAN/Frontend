@@ -1,7 +1,7 @@
 'use client'
 
 import React from 'react'
-import Icon from '@/app/_components/icon/Icon'
+import Icon from '@/app/_components/ui/Icon/Icon'
 
 interface SmallCardProps {
   iconId: string

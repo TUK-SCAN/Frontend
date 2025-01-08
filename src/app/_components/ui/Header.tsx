@@ -2,7 +2,7 @@
 
 import React from 'react'
 import Link from 'next/link' // Next.js의 Link 컴포넌트 불러오기
-import Icon from '../icon/Icon'
+import Icon from '../ui/Icon/Icon'
 
 interface HeaderProps {
   type: 'default' | 'logged-in' // 헤더 타입

@@ -1,6 +1,6 @@
 'use client'
 import { useState } from 'react'
-import Icon from './icon/Icon'
+import Icon from './Icon/Icon'
 import CheckButton from './CheckButton'
 
 interface AccordionProps {
@@ -9,11 +9,12 @@ interface AccordionProps {
 }
 const Accordion = ({ title, contents }: AccordionProps) => {
   const [isOpen, setIsOpen] = useState(false)
+  const [isCheck, setIsCheck] = useState(false)
 
   return (
     <div className="w-[847px] rounded-lg border border-gray-300 shadow-sm">
       <div className="flex h-[56px] items-center justify-between px-4 py-2">
-        <CheckButton size="big" />
+        <CheckButton size="lg" isChecked={isCheck} setIsChecked={setIsCheck} />
         <span className="flex-1 text-start text-lg text-gray-800">{title}</span>
         <button
           className="flex h-6 w-6 items-center justify-center text-gray-500"
