@@ -1,7 +1,7 @@
 'use client'
 
 import React from 'react'
-import Icon from '../icon/Icon' // Icon 컴포넌트 경로를 적절히 수정해주세요.
+import Icon from '../ui/Icon/Icon' // Icon 컴포넌트 경로를 적절히 수정해주세요.
 
 const Footer = () => {
   return (

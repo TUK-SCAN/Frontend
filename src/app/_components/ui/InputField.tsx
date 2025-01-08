@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import clsx from 'clsx'
-import Icon from '@/app/_components/icon/Icon'
+import Icon from '@/app/_components/ui/Icon/Icon'
 
 interface InputFieldProps {
   type: 'simple' | 'number' | 'suffix' | 'search' | 'password'
@@ -36,8 +36,8 @@ const InputField = ({
         className={clsx(
           'flex h-[3.125rem] flex-row items-center gap-1 rounded-lg bg-blue-secondary px-[1.12rem] py-3',
           disabled && 'cursor-not-allowed bg-black-200 text-black-800',
-          isError && !disabled && 'border-status-error rounded-lg border',
-          isSuccess && !disabled && 'border-status-success border'
+          isError && !disabled && 'rounded-lg border border-status-error',
+          isSuccess && !disabled && 'border border-status-success'
         )}
       >
         {type === 'search' && (

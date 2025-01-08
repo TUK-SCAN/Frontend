@@ -2,7 +2,7 @@
 
 import React from 'react'
 import Image from 'next/image'
-import Icon from '@/app/_components/icon/Icon'
+import Icon from '@/app/_components/ui/Icon/Icon'
 
 interface ReviewCardProps {
   review: string
