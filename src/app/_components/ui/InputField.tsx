@@ -1,6 +1,9 @@
+'use client'
+
 import React, { useState } from 'react'
 import clsx from 'clsx'
 import Icon from '@/app/_components/ui/Icon/Icon'
+import HelperLabel from '@/app/_components/ui/Label/HelperLabel'
 
 interface InputFieldProps {
   type: 'simple' | 'number' | 'suffix' | 'search' | 'password'
@@ -84,7 +87,12 @@ const InputField = ({
             isSuccess && 'text-status-success'
           )}
         >
-          {helperText}
+          <HelperLabel
+            size="sm"
+            type={isError ? 'error' : isSuccess ? 'success' : 'default'}
+          >
+            {helperText}
+          </HelperLabel>
         </span>
       )}
     </div>
