@@ -13,9 +13,7 @@ const UserLayout = ({ children }: LayoutProps) => {
       <div className="fixed left-0 top-0 z-50 w-full">
         <Header type="default" />
       </div>
-      <main className="flex-1 overflow-hidden" style={{ paddingTop: '90px' }}>
-        {children}
-      </main>
+      <main className="flex-1 overflow-hidden pt-[90px]">{children}</main>
       <div className="mt-auto">
         <Footer />
       </div>
