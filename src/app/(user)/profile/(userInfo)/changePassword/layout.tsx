@@ -1,17 +1,14 @@
 'use client'
 
-import Banner from "@/app/_components/banner/Banner"
+
 import Layout from "@/app/layout"
 
 const PageWithLayout = () => {
   return (
-    <Layout
-      banner={
+    <Layout>
         <div>
-          <Banner type={1} />
+          
         </div>
-      }
-    >
     </Layout>
   )
 }
