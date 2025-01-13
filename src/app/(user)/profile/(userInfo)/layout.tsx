@@ -1,12 +1,17 @@
 'use client'
-import Banner from '@/app/_components/ui/banner/Banner'
+import React, { ReactNode } from 'react'
 
-const Layout = () => {
+interface UserInfoLayoutProps {
+  content: ReactNode
+}
+
+const UserInfoLayout = ({ content }: UserInfoLayoutProps) => {
+  console.log(content)
   return (
-    <div>
-      <Banner type={1} />
-    </div>
+    <section className="w-[600px] justify-center rounded-lg bg-white p-[50px] shadow-sm">
+      {content}
+    </section>
   )
 }
 
-export default Layout
+export default UserInfoLayout
