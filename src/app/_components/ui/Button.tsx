@@ -17,9 +17,10 @@ const buttonVariants = cva(
       },
       size: {
         default: 'w-[380px] h-[48px]',
-        lg: 'w-[380px] h-[60px]',
-        md: 'w-[380px] h-[48px]',
-        sm: 'w-[380px] h-[38px]',
+        lg: 'w-[440px] h-[60px]', // 로그인 박스와 같은 크기로 조정
+        md: 'w-[400px] h-[48px]',
+        sm: 'w-[360px] h-[38px]',
+        custom: 'w-full h-[48px]', // 추가된 옵션: 부모 컨테이너에 맞춤
       },
     },
     defaultVariants: {
