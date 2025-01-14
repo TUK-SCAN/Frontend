@@ -3,12 +3,32 @@
 import React, { useState } from 'react'
 import Link from 'next/link'
 import { Button } from '@/app/_components/ui/Button'
+import html2canvas from 'html2canvas'
 
 const OrderDetails = () => {
   const [showDetails, setShowDetails] = useState(false) // 자세히 버튼 상태
 
-  const handleSaveImage = () => {
-    alert('상자 내용을 캡처하여 저장합니다.')
+  const handleSaveImage = async () => {
+    if (!showDetails) {
+      setShowDetails(true) // 상자를 렌더링
+    }
+
+    setTimeout(async () => {
+      try {
+        const element = document.querySelector('.order-details')
+        if (!element) throw new Error('저장할 요소를 찾을 수 없습니다.')
+
+        // html2canvas로 캡처
+        const canvas = await html2canvas(element as HTMLElement)
+        const link = document.createElement('a')
+        link.href = canvas.toDataURL('image/png')
+        link.download = 'order-details.png'
+        link.click()
+      } catch (error) {
+        console.error('이미지 저장 중 오류 발생:', error)
+        alert('이미지 저장에 실패했습니다. 다시 시도해주세요.')
+      }
+    }, 100) // DOM 업데이트를 기다림
   }
 
   return (
@@ -67,7 +87,7 @@ const OrderDetails = () => {
 
         {/* 자세히 보기 상자 */}
         {showDetails && (
-          <div className="mt-6 rounded-lg border border-gray-300 bg-white p-6">
+          <div className="order-details mt-6 rounded-lg border border-gray-300 bg-white p-6">
             <div className="mb-6 flex items-center">
               <strong className="w-[150px]">1. 작업 상태</strong>
               <div className="flex items-center space-x-2 text-sm">

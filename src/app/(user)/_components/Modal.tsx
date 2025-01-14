@@ -1,6 +1,7 @@
 'use client'
 
-import React from 'react'
+import React, { useEffect } from 'react'
+import { createPortal } from 'react-dom'
 import Link from 'next/link'
 import Image from 'next/image'
 import { Button } from '@/app/_components/ui/Button'
@@ -18,12 +19,20 @@ interface ModalProps {
 }
 
 const Modal = ({ type, title, content, icon, onClose }: ModalProps) => {
+  // ESC 키로 모달 닫기 핸들러
+  useEffect(() => {
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') onClose()
+    }
+    document.addEventListener('keydown', handleEscape)
+    return () => document.removeEventListener('keydown', handleEscape)
+  }, [onClose])
+
   const renderContent = () => {
     if (type === 'input') {
       return (
         <div className="flex items-center justify-between rounded-lg bg-gray-100 px-4 py-2">
           <span className="text-black">{content}</span>
-          {/* 복사 버튼 */}
           <button
             onClick={() => navigator.clipboard.writeText(content || '')}
             className="ml-2"
@@ -67,7 +76,6 @@ const Modal = ({ type, title, content, icon, onClose }: ModalProps) => {
     if (type === 'input') {
       return (
         <div className="flex">
-          {/* 닫기 버튼 */}
           <Button
             variant="secondary"
             size="lg"
@@ -76,7 +84,6 @@ const Modal = ({ type, title, content, icon, onClose }: ModalProps) => {
           >
             닫기
           </Button>
-          {/* 로그인 버튼 */}
           <Link href="/signin" className="flex-1">
             <Button
               variant="primary"
@@ -104,8 +111,13 @@ const Modal = ({ type, title, content, icon, onClose }: ModalProps) => {
     )
   }
 
-  return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+  const modal = (
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modal-title"
+    >
       <div
         className="relative w-[400px] bg-white shadow-lg"
         style={{
@@ -113,19 +125,22 @@ const Modal = ({ type, title, content, icon, onClose }: ModalProps) => {
           overflow: 'hidden',
         }}
       >
-        {/* 타이틀 */}
-        <div className="pt-6 text-center text-lg font-bold text-black">
+        <div
+          id="modal-title"
+          className="pt-6 text-center text-lg font-bold text-black"
+        >
           {title}
         </div>
-        {/* 디바이더 */}
         <div className="mt-4 h-[1px] w-full bg-gray-300"></div>
-        {/* 컨텐츠 */}
         <div className="px-6 py-8">{renderContent()}</div>
-        {/* 버튼 */}
         <div>{renderButtons()}</div>
       </div>
     </div>
   )
+
+  return typeof document !== 'undefined'
+    ? createPortal(modal, document.body)
+    : null
 }
 
 export default Modal
