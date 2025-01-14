@@ -7,8 +7,8 @@ import InputField from '@/app/_components/ui/InputField'
 import CheckButton from '@/app/_components/CheckButton'
 import { Button } from '@/app/_components/ui/Button'
 
-import KakaoIcon from '@/assets/images/Kakao.svg'
-import GoogleIcon from '@/assets/images/Google.svg'
+import KakaoIcon from '@/assets/images/signup/Kakao.svg'
+import GoogleIcon from '@/assets/images/signup/Google.svg'
 
 const LoginPage = () => {
   return (

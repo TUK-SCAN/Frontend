@@ -3,7 +3,7 @@
 import React from 'react'
 import Image from 'next/image'
 import Icon from '@/app/_components/ui/Icon/Icon'
-import MainCard from '@/assets/images/MainCard.svg'
+import MainCard from '@/assets/images/landing/MainCard.svg'
 
 const FirstPage = () => {
   return (

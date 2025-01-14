@@ -5,24 +5,9 @@ import InputField from '@/app/_components/ui/InputField'
 import { Button } from '@/app/_components/ui/Button'
 import CheckButton from '@/app/_components/ui/CheckButton'
 import Modal from '@/app/(user)/(auth)/signUp/_components/Modal'
+import StepIndicator from './_components/StepIndicator'
 import Link from 'next/link'
 
-const StepIndicator = ({ currentStep }: { currentStep: number }) => {
-  return (
-    <div className="mb-6 flex justify-center space-x-4">
-      {[1, 2].map((step) => (
-        <div
-          key={step}
-          className={`flex h-10 w-10 items-center justify-center rounded-full text-lg font-bold text-white ${
-            currentStep === step ? 'bg-blue-500' : 'bg-gray-300'
-          }`}
-        >
-          {step}
-        </div>
-      ))}
-    </div>
-  )
-}
 const SignUpPage = () => {
   const [step, setStep] = useState(1)
   const [name, setName] = useState('')
@@ -176,10 +161,6 @@ const SignUpPage = () => {
               <CheckButton
                 size="lg"
                 isChecked={agreement.all}
-                // setIsChecked={setAgreement((prev) => ({
-                //   ...prev,
-                //   all: !prev.all,
-                // }))}
                 onClick={() => {
                   setAgreement((prev) => ({
                     ...prev,
@@ -228,10 +209,6 @@ const SignUpPage = () => {
                     <CheckButton
                       size="lg"
                       isChecked={agreement.all}
-                      // setIsChecked={setAgreement((prev) => ({
-                      //   ...prev,
-                      //   all: !prev.all,
-                      // }))}
                       onClick={() => {
                         setAgreement((prev) => ({
                           ...prev,

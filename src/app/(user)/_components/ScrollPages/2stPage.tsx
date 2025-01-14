@@ -2,8 +2,8 @@
 
 import React from 'react'
 import GradientCard from '../GradientCard'
-import Book from '@/assets/images/Book.svg'
-import Hammer from '@/assets/images/Hammer.svg'
+import Book from '@/assets/images/landing/Book.svg'
+import Hammer from '@/assets/images/landing/Hammer.svg'
 
 const SecondPage = () => {
   return (
