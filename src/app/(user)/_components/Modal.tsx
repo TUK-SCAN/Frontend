@@ -5,9 +5,9 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { Button } from '@/app/_components/ui/Button'
 
-import KakaoCircle from '@/assets/images/KakaoCircle.svg'
-import GoogleCircle from '@/assets/images/GoogleCircle.svg'
-import CopyIcon from '@/assets/images/Copy.svg'
+import KakaoCircle from '@/assets/images/login/KakaoCircle.svg'
+import GoogleCircle from '@/assets/images/login/GoogleCircle.svg'
+import CopyIcon from '@/assets/images/login/Copy.svg'
 
 interface ModalProps {
   type: 'input' | 'message' | 'external' // 모달 종류

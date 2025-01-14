@@ -1,17 +1,7 @@
-// 네이게이션 컴포넌트로 이동
-// spa 싱글페이지 어플리케이션 적용하기
-// 페이지 이동 시 spa가 아닌 방법으로 자동으로 reset페이지로 이동하기
-// -> use reoter
 'use client'
 
-import { useRouter } from 'next/navigation'
-import { useEffect } from 'react'
+import AutoRedirect from '@/app/_components/AutoRedirect'
 
-const Id = () => {
-  const router = useRouter()
-  useEffect(() => {
-    router.replace('/id/reset')
-  }, [])
-  return null
+export default function Id() {
+  return <AutoRedirect to="/id/reset" title="아이디 찾기" />
 }
-export default Id
