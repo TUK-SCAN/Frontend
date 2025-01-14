@@ -1,0 +1,6 @@
+{
+  "name": "@shared/tailwind",
+  "version": "1.0.0",
+  "main": "tailwind.config.ts",
+  "type": "module"
+}

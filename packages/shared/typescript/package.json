@@ -1,0 +1,6 @@
+{
+  "name": "@shared/typescript",
+  "version": "1.0.0",
+  "main": "tsconfig.base.json",
+  "type": "module"
+}
