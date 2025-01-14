@@ -6,7 +6,7 @@ const nextConfig: NextConfig = {
     formats: ['image/webp'],
   },
 
-  output: 'export',
+  // output: 'export',
 
   // i18n: {
   //   locales: ['ko', 'en'],
