@@ -1,5 +1,13 @@
+'use client'
+import { useRouter } from 'next/navigation'
+import { useEffect } from 'react'
+
 const App = () => {
-  return <div></div>
+  const router = useRouter()
+  useEffect(() => {
+    router.replace('/profile/editInfo')
+  })
+  return
 }
 
 export default App

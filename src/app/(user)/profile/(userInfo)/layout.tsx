@@ -1,15 +1,10 @@
 'use client'
-import React, { ReactNode } from 'react'
+import { LayoutProps } from '@/types/common'
 
-interface UserInfoLayoutProps {
-  content: ReactNode
-}
-
-const UserInfoLayout = ({ content }: UserInfoLayoutProps) => {
-  console.log(content)
+const UserInfoLayout = ({ children }: LayoutProps) => {
   return (
     <section className="w-[600px] justify-center rounded-lg bg-white p-[50px] shadow-sm">
-      {content}
+      {children}
     </section>
   )
 }
