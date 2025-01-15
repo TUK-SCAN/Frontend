@@ -4,7 +4,7 @@ import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import InputField from '@tookscan/components/ui/InputField'
-import CheckButton from '@tookscan/components/CheckButton'
+import CheckButton from '@tookscan/components/ui/CheckButton'
 import { Button } from '@tookscan/components/ui/Button'
 
 import KakaoIcon from '@/assets/images/signup/Kakao.svg'
@@ -34,11 +34,11 @@ const LoginPage = () => {
         {/* 체크박스 */}
         <div className="mt-4 flex justify-between px-6">
           <div className="flex items-center space-x-1">
-            <CheckButton size="sm" />
+            <CheckButton size="sm" onClick={()=>{}} />
             <span className="text-black-600">아이디 저장</span>
           </div>
           <div className="flex items-center space-x-1">
-            <CheckButton size="sm" />
+            <CheckButton size="sm" onClick={()=>{}} />
             <span className="text-black-600">자동 로그인</span>
           </div>
         </div>

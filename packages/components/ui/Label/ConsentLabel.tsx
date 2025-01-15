@@ -1,6 +1,7 @@
 import clsx from "clsx";
 import Icon from "@tookscan/components/ui/Icon/Icon";
 import CheckButton from "@tookscan/components/ui/CheckButton";
+import React from "react";
 
 interface ConsentLabelProps {
   content: string;
@@ -32,7 +33,7 @@ const ConsentLabel = ({
         <CheckButton
           size={size}
           isChecked={consentStatus}
-          setIsChecked={setConsentStatus}
+          onClick={() => setConsentStatus(!consentStatus)}
         />
         <p>{content}</p>
       </div>
