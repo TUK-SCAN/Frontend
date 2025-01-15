@@ -1,12 +1,8 @@
 {
   "name": "@shared/tailwind",
   "version": "1.0.0",
-  "main": "tailwind.config.ts",
+  "main": "./tailwind.config.js",
   "exports": {
-    ".": "./tailwind.config.ts"
-  },
-  "type": "module",
-  "dependencies": {
-    "tailwindcss": "^3.4.17"
+    "./tailwind.config": "./tailwind.config.ts"
   }
 }

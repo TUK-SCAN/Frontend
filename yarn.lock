@@ -1877,6 +1877,8 @@ __metadata:
 "@shared/tailwind@workspace:packages/shared/tailwind":
   version: 0.0.0-use.local
   resolution: "@shared/tailwind@workspace:packages/shared/tailwind"
+  dependencies:
+    tailwindcss: "npm:^3.4.17"
   languageName: unknown
   linkType: soft
 
