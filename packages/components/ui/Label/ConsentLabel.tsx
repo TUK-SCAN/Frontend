@@ -38,7 +38,7 @@ const ConsentLabel = ({
         <p>{content}</p>
       </div>
       {onClick && (
-        <button>
+        <button aria-label="상세 정보 보기" title="상세 정보 보기">
           <Icon id="rightArrow" width={6} height={10} className="text-white" />
         </button>
       )}
