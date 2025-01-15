@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import clsx from "clsx";
 import Icon from "@tookscan/components/ui/Icon/Icon";
 import HelperLabel from "@tookscan/components/ui/Label/HelperLabel";
+import { InputType } from "zlib";
 
 interface InputFieldProps {
   type: "simple" | "number" | "suffix" | "search" | "password";
@@ -32,6 +33,12 @@ const InputField = ({
   const [isPasswordVisible, setIsPasswordVisible] = useState(
     type !== "password"
   );
+
+  const getInputType = (type: InputType, isPasswordVisible: boolean) => {
+    if (type === "password") return isPasswordVisible ? "text" : "password";
+    if (type === "number") return "number";
+    return "text";
+  };
 
   return (
     <div className="flex w-96 flex-col gap-2">
@@ -62,18 +69,24 @@ const InputField = ({
           onBlur={() => setIsFocused(false)}
           onChange={onChange}
           disabled={disabled}
-          type={isPasswordVisible ? "text" : "password"}
+          type={getInputType(type, isPasswordVisible)}
           placeholder={placeholder}
           className="w-full bg-transparent text-black-800 outline-none"
         />
         {type === "suffix" && <p className="text-black-400">@gmail.com</p>}
         {type === "password" && (
-          <button onClick={() => setIsPasswordVisible(!isPasswordVisible)}>
+          <button
+            type="button"
+            onClick={() => setIsPasswordVisible(!isPasswordVisible)}
+            aria-label={isPasswordVisible ? "비밀번호 숨기기" : "비밀번호 표시"}
+            aria-pressed={isPasswordVisible}
+          >
             <Icon
               id={isPasswordVisible ? "openEyes" : "closeEyes"}
               width={24}
               height={24}
               className="text-black-800"
+              aria-hidden="true"
             />
           </button>
         )}

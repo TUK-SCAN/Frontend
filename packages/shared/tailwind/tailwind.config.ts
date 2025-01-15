@@ -1,11 +1,12 @@
 import type { Config } from "tailwindcss";
-import { colors } from "../../config/color"; // 공통 colors 파일 가져오기
+import { colors } from "../../config/color";
 
 const sharedConfig: Config = {
   content: [
-    "./client/user/src/**/*.{js,ts,jsx,tsx,mdx}",
-    "./client/admin/src/**/*.{js,ts,jsx,tsx,mdx}",
-    "./packages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./client/user/src/**/*.{js,ts,jsx,tsx}",
+    "./client/admin/src/**/*.{js,ts,jsx,tsx}",
+    "./packages/**/*.{js,ts,jsx,tsx}",
+    "./node_modules/my-package/dist/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     extend: {

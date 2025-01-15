@@ -1,6 +1,6 @@
 import "@tookscan/styles/globals.css"
 import "@tookscan/styles/reset.css"
-import QueryProvider from '@tookscan/components/QueryProvider'
+import QueryProvider from '@tookscan/components/app/QueryProvider'
 import SpriteSheet from '@tookscan/components/ui/Icon/SpriteSheet'
 import { LayoutProps } from '@/types/common'
 import Header from '@tookscan/components/ui/Header'
@@ -8,7 +8,7 @@ import Footer from '@tookscan/components/ui/Footer'
 
 export default function RootLayout({ children }: LayoutProps) {
   return (
-    <html lang="en">
+    <html lang="ko">
       <body>
         {SpriteSheet}
         <QueryProvider>
