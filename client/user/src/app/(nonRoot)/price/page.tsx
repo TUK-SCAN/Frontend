@@ -167,10 +167,9 @@ const Price = () => {
   </table>
 </div>
 
-      </div>
-    </div>
-
-   
+</div>
+</div>
+  
   )
 }
 export default Price;
