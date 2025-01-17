@@ -100,7 +100,6 @@ const FullScrollPage = () => {
         <link rel="apple-touch-icon" sizes="180x180" href="/images/Logo.png" />
       </Head>
 
-      {/* 전체 페이지 구조 */}
       <div ref={sectionsRef} className="relative h-screen overflow-hidden">
         <header className="fixed left-0 top-0 z-50 w-full bg-white shadow-lg">
           <nav className="container mx-auto flex items-center justify-between p-4">
