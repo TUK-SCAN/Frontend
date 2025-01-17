@@ -34,13 +34,13 @@ const Price = () => {
           </div>
         </div>
        
-        <table className="text-[18px] w-full border-collapse border border-gray-300 text-gray-700">
+        <table className="text-[18px] w-full border-collapse border border-gray-300 text-gray-700 rounded-lg">
   <thead>
     <tr>
       <th className=" bg-blue-secondary border border-gray-300 px-4 py-2 text-blue-primary w-[204px] h-[56px] ">
         항목
       </th>
-      <th className="border border-gray-300 px-4 py-2 w-[346px] h-[56px] rounded-tl-[0.5px]">
+      <th className="border border-gray-300 px-4 py-2 w-[346px] h-[56px] ">
         상세 내용
       </th>
     </tr>
@@ -87,10 +87,10 @@ const Price = () => {
       </td>
     </tr>
     <tr>
-      <td className="bg-blue-secondary border border-gray-300 px-4 py-2 text-center text-blue-primary w-[204px] h-[56px] rounded-bl-[0.5px]">
+      <td className="bg-blue-secondary border border-gray-300 px-4 py-2 text-center text-blue-primary w-[204px] h-[56px] ">
         기울기보정
       </td>
-      <td className="border border-gray-300 px-4 py-2 text-center w-[346px] h-[56px] rounded-br-[0.5px]">
+      <td className="border border-gray-300 px-4 py-2 text-center w-[346px] h-[56px] ">
         자동 기울기 보정 및 잘못된 정렬 수정
       </td>
     </tr>
