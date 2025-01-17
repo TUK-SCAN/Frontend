@@ -1,5 +1,5 @@
 const SpriteSheet = (
-  <svg xmlns="http://www.w3.org/2000/svg" style={{ display: 'none' }}>
+  <svg xmlns="http://www.w3.org/2000/svg" style={{ display: "none" }}>
     <symbol
       id="search"
       viewBox="0 0 20 20"
@@ -585,7 +585,51 @@ const SpriteSheet = (
         strokeLinejoin="round"
       />
     </symbol>
-  </svg>
-)
+    <symbol id="siren" viewBox="0 0 14 15">
+      <path fill="#fff" d="M0 14.48h14v-14H0v14z" />
+    </symbol>
 
-export default SpriteSheet
+    <symbol id="600dpi" viewBox="0 0 26 27">
+      <mask
+        id="mask0_842_31751"
+        width="24"
+        height="25"
+        x="1"
+        y="0"
+        maskUnits="userSpaceOnUse"
+        style={{ maskType: "luminance" }}
+      >
+        <path fill="#fff" d="M25 .59H1v24h24v-24z" />
+      </mask>
+      <g mask="url(#mask0_842_31751)">
+        <mask
+          id="mask1_842_31751"
+          width="24"
+          height="25"
+          x="1"
+          y="0"
+          maskUnits="userSpaceOnUse"
+          style={{ maskType: "luminance" }}
+        >
+          <path fill="#fff" d="M25 .59H1v24h24v-24z" />
+        </mask>
+        <g fill="#5592FC" mask="url(#mask1_842_31751)">
+          <path
+            fill-rule="evenodd"
+            d="M20.922 4.472a.75.75 0 0 1 .198 1.042l-2.778 4.078h1.908a.75.75 0 0 1 .75.75v9.5a2.75 2.75 0 0 1-2.75 2.75H7.75A2.75 2.75 0 0 1 5 19.842v-9.5a.75.75 0 0 1 .75-.75h10.776L19.88 4.67a.75.75 0 0 1 1.042-.198zM6.5 11.092v8.75c0 .69.56 1.25 1.25 1.25h10.5c.69 0 1.25-.56 1.25-1.25v-8.75h-13z"
+            clip-rule="evenodd"
+          />
+          <path
+            fill-rule="evenodd"
+            d="M10 14.342a.75.75 0 0 1 .75-.75h4.5a.75.75 0 0 1 0 1.5h-4.5a.75.75 0 0 1-.75-.75z"
+            clip-rule="evenodd"
+          />
+          <path d="M12.85 3.665a.5.5 0 0 0 .224-.223l.478-.957a.5.5 0 0 1 .894 0l.479.957a.5.5 0 0 0 .223.223l.957.479a.5.5 0 0 1 0 .894l-.957.478a.5.5 0 0 0-.223.224l-.479.957a.5.5 0 0 1-.894 0l-.478-.957a.5.5 0 0 0-.224-.224l-.956-.478a.5.5 0 0 1 0-.894l.956-.479zM7.517 5.332a.5.5 0 0 0 .223-.223l.312-.624a.5.5 0 0 1 .894 0l.312.624a.5.5 0 0 0 .224.223l.623.312a.5.5 0 0 1 0 .894l-.623.312a.5.5 0 0 0-.224.223l-.312.624a.5.5 0 0 1-.894 0l-.312-.624a.5.5 0 0 0-.223-.223l-.623-.312a.5.5 0 0 1 0-.894l.623-.312z" />
+        </g>
+      </g>
+    </symbol>
+    <symbol id="price" viewBox="0 0 24 25"><g clip-path="url(#clip0_842_31734)"><path fill="#5592FC" d="M21.593 13.724a2.29 2.29 0 0 0-1.99-.396l-3.923.902A2.625 2.625 0 0 0 13.125 11H8.432a2.982 2.982 0 0 0-2.122.878L4.19 14H1.5A1.5 1.5 0 0 0 0 15.5v3.75a1.5 1.5 0 0 0 1.5 1.5h9.75a.744.744 0 0 0 .182-.023l6-1.5a.653.653 0 0 0 .111-.037l3.645-1.55.04-.02a2.306 2.306 0 0 0 .37-3.896h-.005zM1.5 15.5h2.25v3.75H1.5V15.5zm19.072.77l-3.563 1.517-5.853 1.463H5.25v-4.19l2.122-2.12a1.487 1.487 0 0 1 1.06-.44h4.693a1.125 1.125 0 1 1 0 2.25H10.5a.75.75 0 1 0 0 1.5h3a.782.782 0 0 0 .168-.019l6.281-1.444.03-.008a.806.806 0 0 1 .59 1.49h.003zM15.375 9.5c.185 0 .37-.015.553-.045a3.376 3.376 0 1 0 2.646-4.406A3.375 3.375 0 1 0 15.375 9.5zM21 8.375a1.875 1.875 0 1 1-3.75 0 1.875 1.875 0 0 1 3.75 0zM15.375 4.25a1.875 1.875 0 0 1 1.805 1.37 3.376 3.376 0 0 0-1.407 2.337 1.875 1.875 0 1 1-.398-3.707z"/></g><defs><clipPath id="clip0_842_31734"><path fill="#fff" d="M0 0h24v24H0z" transform="translate(0 .5)"/></clipPath></defs></symbol>
+  </svg>
+);
+
+export default SpriteSheet;
