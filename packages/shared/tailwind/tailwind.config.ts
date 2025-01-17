@@ -2,12 +2,7 @@ import type { Config } from "tailwindcss";
 import { colors } from "../../config/color";
 
 const sharedConfig: Config = {
-  content: [
-    "./client/user/src/**/*.{js,ts,jsx,tsx}",
-    "./client/admin/src/**/*.{js,ts,jsx,tsx}",
-    "./packages/**/*.{js,ts,jsx,tsx}",
-    "./node_modules/my-package/dist/**/*.{js,ts,jsx,tsx}",
-  ],
+  content: [],
   theme: {
     extend: {
       colors,
