@@ -4,6 +4,7 @@ import React, { useState } from 'react'
 import Link from 'next/link'
 import { Button } from '@tookscan/components/ui/Button'
 import html2canvas from 'html2canvas'
+import OrderDetailBox from '@tookscan/components/ui/OrderDetailBox'
 
 const OrderDetails = () => {
   const [showDetails, setShowDetails] = useState(false) // 자세히 버튼 상태
@@ -61,7 +62,7 @@ const OrderDetails = () => {
         <div className="mt-4 grid grid-cols-6 gap-4 bg-blue-secondary p-2 text-center text-sm font-bold text-blue-primary">
           <div>주문 번호</div>
           <div>주문 일시</div>
-          <div>주문 수량</div>
+          <div>상품 수량</div>
           <div>주문 금액</div>
           <div>작업 상태</div>
           <div>세부 내용</div>
@@ -85,7 +86,6 @@ const OrderDetails = () => {
           </div>
         </div>
 
-        {/* 자세히 보기 상자 */}
         {showDetails && (
           <div className="order-details mt-6 rounded-lg border border-gray-300 bg-white p-6">
             <div className="mb-6 flex items-center">
@@ -154,6 +154,16 @@ const OrderDetails = () => {
             </Button>
           </div>
         )}
+        <OrderDetailBox
+          currentStatus="업체도착"
+          orderDate="2024.12.25 (월) 12:45"
+          customer="홍길동"
+          deliveryInfo="경기도 시흥시 산기대학로 237 TIP, 1203호"
+          productDetails="스캔된 자료 2건"
+          paymentAmount="47,000원"
+          paymentMethod="TOSS / 무통장 입금"
+          isModal={false}
+        />
       </div>
     </div>
   )
