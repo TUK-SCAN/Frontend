@@ -9,6 +9,14 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@shared/tailwind": "workspace:*",
+    "@shared/typescript": "workspace:*",
+    "@shared/prettier": "workspace:*",
+    "@shared/eslint": "workspace:*",
+    "@tookscan/components": "workspace:*",
+    "@tookscan/utils": "workspace:*",
+    "@tookscan/config": "workspace:*",
+    "@tookscan/styles": "workspace:*",
     "html2canvas": "^1.4.1",
     "react-fullpage": "^0.1.19"
   }
