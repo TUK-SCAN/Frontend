@@ -1,3 +1,4 @@
+import js from '@eslint/js'
 import globals from 'globals'
 import reactHooks from 'eslint-plugin-react-hooks'
 import reactRefresh from 'eslint-plugin-react-refresh'
@@ -5,12 +6,10 @@ import ts from '@typescript-eslint/eslint-plugin'
 
 export default [
   {
-    ignores: ['dist'],
-  },
-  {
-    files: ['**/*.{ts,tsx}'],
+    files: ['**/*.{js,jsx,ts,tsx}'],
     languageOptions: {
-      ecmaVersion: 2020,
+      ecmaVersion: 'latest',
+      sourceType: 'module',
       globals: globals.browser,
     },
     plugins: {
@@ -24,11 +23,13 @@ export default [
         'warn',
         { allowConstantExport: true },
       ],
-      '@typescript-eslint/no-unused-vars': ['warn'],
-      '@typescript-eslint/no-explicit-any': ['warn'],
+      '@typescript-eslint/no-unused-vars': 'warn',
+      '@typescript-eslint/no-explicit-any': 'warn',
     },
     env: {
+      es2021: true,
       node: true,
     },
+    ignores: ['dist', 'node_modules'],
   },
 ]
