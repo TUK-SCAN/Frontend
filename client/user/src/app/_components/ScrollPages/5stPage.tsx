@@ -126,9 +126,8 @@ const FifthPage = () => {
           ))}
         </div>
       </div>
-
       {/* 슬라이드 애니메이션 */}
-      <style jsx>{`
+      <style>{`
         @keyframes infiniteSlide {
           0% {
             transform: translateX(0);
