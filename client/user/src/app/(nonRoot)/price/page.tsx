@@ -1,5 +1,5 @@
-import Banner from '@tookscan/components/ui/Banner/Banner'
-import Icon from '@tookscan/components/ui/Icon/Icon'
+import Banner from "@tookscan/components/ui/Banner/Banner";
+import Icon from "@tookscan/components/ui/Icon/Icon";
 
 const Price = () => {
   return (
@@ -169,7 +169,8 @@ const Price = () => {
 
       </div>
     </div>
-  
+
+   
   )
 }
 export default Price;
