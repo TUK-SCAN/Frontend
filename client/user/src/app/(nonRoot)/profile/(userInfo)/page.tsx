@@ -1,11 +1,14 @@
 'use client'
+import AutoRedirect from '@tookscan/components/app/AutoRedirect'
+
 import React from 'react'
 
-
-const UserInfoPage = () => {
+const Profile = () => {
   return (
-   <div></div>
+    <div>
+      <AutoRedirect to="/profile/editInfo" title="" />
+    </div>
   )
 }
 
-export default UserInfoPage
+export default Profile
