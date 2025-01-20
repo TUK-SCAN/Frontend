@@ -36,63 +36,63 @@ const Price = () => {
               </div>
             </div>
             <div className="w-[37.5rem] overflow-hidden rounded-lg">
-              <table className="w-full border-collapse border border-gray-600 text-[1.125rem]">
+              <table className="w-full border-collapse border border-gray-300 text-[1.125rem] [border-style:solid]">
                 <thead>
                   <tr>
-                    <th className="h-[3.5rem] w-[9.375rem] !border border-gray-600 bg-blue-secondary px-4 py-2 text-center align-middle text-blue-primary">
+                    <th className="h-[3.5rem] w-[9.375rem] border border-gray-300 bg-blue-secondary px-4 py-2 text-center align-middle text-blue-primary [border-style:solid]">
                       항목
                     </th>
-                    <th className="h-[3.5rem] w-[15.625rem] !border border-gray-600 px-4 py-2 text-center align-middle text-gray-500">
+                    <th className="h-[3.5rem] w-[15.625rem] border border-gray-300 px-4 py-2 text-center align-middle text-gray-500 [border-style:solid]">
                       상세 내용
                     </th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <td className="h-[3.5rem] w-[12.75rem] !border border-gray-600 bg-blue-secondary px-4 py-2 text-center align-middle text-blue-primary">
+                    <td className="h-[3.5rem] w-[12.75rem] border border-gray-300 bg-blue-secondary px-4 py-2 text-center align-middle text-blue-primary [border-style:solid]">
                       품질
                     </td>
-                    <td className="h-[3.5rem] w-[21.625rem] !border border-gray-600 px-4 py-2 text-center align-middle text-gray-500">
+                    <td className="h-[3.5rem] w-[21.625rem] border border-gray-300 px-4 py-2 text-center align-middle text-gray-500 [border-style:solid]">
                       고해상도 컬러 스캔
                     </td>
                   </tr>
                   <tr>
-                    <td className="h-[3.5rem] w-[12.75rem] !border border-gray-600 bg-blue-secondary px-4 py-2 text-center align-middle text-blue-primary">
+                    <td className="h-[3.5rem] w-[12.75rem] border border-gray-300 bg-blue-secondary px-4 py-2 text-center align-middle text-blue-primary [border-style:solid]">
                       DPI
                     </td>
-                    <td className="h-[3.5rem] w-[21.625rem] !border border-gray-600 px-4 py-2 text-center align-middle text-gray-500">
+                    <td className="h-[3.5rem] w-[21.625rem] border border-gray-300 px-4 py-2 text-center align-middle text-gray-500 [border-style:solid]">
                       최대 600 DPI
                     </td>
                   </tr>
                   <tr>
-                    <td className="h-[3.5rem] w-[12.75rem] !border border-gray-600 bg-blue-secondary px-4 py-2 text-center align-middle text-blue-primary">
+                    <td className="h-[3.5rem] w-[12.75rem] border border-gray-300 bg-blue-secondary px-4 py-2 text-center align-middle text-blue-primary [border-style:solid]">
                       색감
                     </td>
-                    <td className="h-[3.5rem] w-[21.625rem] !border border-gray-600 px-4 py-2 text-center align-middle text-gray-500">
+                    <td className="h-[3.5rem] w-[21.625rem] border border-gray-300 px-4 py-2 text-center align-middle text-gray-500 [border-style:solid]">
                       24비트 컬러
                     </td>
                   </tr>
                   <tr>
-                    <td className="h-[3.5rem] w-[12.75rem] !border border-gray-600 bg-blue-secondary px-4 py-2 text-center align-middle text-blue-primary">
+                    <td className="h-[3.5rem] w-[12.75rem] border border-gray-300 bg-blue-secondary px-4 py-2 text-center align-middle text-blue-primary [border-style:solid]">
                       선명도
                     </td>
-                    <td className="h-[3.5rem] w-[21.625rem] !border border-gray-600 px-4 py-2 text-center align-middle text-gray-500">
+                    <td className="h-[3.5rem] w-[21.625rem] border border-gray-300 px-4 py-2 text-center align-middle text-gray-500 [border-style:solid]">
                       자동 이미지 보정 및 선명한 텍스트 출력 지원
                     </td>
                   </tr>
                   <tr>
-                    <td className="h-[3.5rem] w-[12.75rem] !border border-gray-600 bg-blue-secondary px-4 py-2 text-center align-middle text-blue-primary">
+                    <td className="h-[3.5rem] w-[12.75rem] border border-gray-300 bg-blue-secondary px-4 py-2 text-center align-middle text-blue-primary [border-style:solid]">
                       검수작업
                     </td>
-                    <td className="h-[3.5rem] w-[21.625rem] !border border-gray-600 px-4 py-2 text-center align-middle text-gray-500">
+                    <td className="h-[3.5rem] w-[21.625rem] border border-gray-300 px-4 py-2 text-center align-middle text-gray-500 [border-style:solid]">
                       빈 페이지 제거 및 배경틈 보정 기능
                     </td>
                   </tr>
                   <tr>
-                    <td className="h-[3.5rem] w-[12.75rem] !border border-gray-600 bg-blue-secondary px-4 py-2 text-center align-middle text-blue-primary">
+                    <td className="h-[3.5rem] w-[12.75rem] border border-gray-300 bg-blue-secondary px-4 py-2 text-center align-middle text-blue-primary [border-style:solid]">
                       기울기보정
                     </td>
-                    <td className="h-[3.5rem] w-[21.625rem] !border border-gray-600 px-4 py-2 text-center align-middle text-gray-500">
+                    <td className="h-[3.5rem] w-[21.625rem] border border-gray-300 px-4 py-2 text-center align-middle text-gray-500 [border-style:solid]">
                       자동 기울기 보정 및 잘못된 정렬 수정
                     </td>
                   </tr>
