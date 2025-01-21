@@ -1,26 +1,18 @@
-"use client";
+'use client'
 
-import { useRouter } from "next/navigation";
-import { useEffect } from "react";
-import Head from "next/head";
-import React from "react";
+import { useRouter } from 'next/navigation'
+import { useEffect } from 'react'
 
 interface AutoRedirectProps {
-  to: string;
-  title: string;
+  to: string
 }
 
-export default function AutoRedirect({ to, title }: AutoRedirectProps) {
-  const router = useRouter();
+export default function AutoRedirect({ to }: AutoRedirectProps) {
+  const router = useRouter()
 
   useEffect(() => {
-    router.replace(to, { scroll: false });
-  }, [to]);
+    router.replace(to, { scroll: false })
+  }, [to])
 
-  return (
-    <Head>
-      <title>{title} - TOOK SCAN</title>
-      <meta name="robots" content="noindex" />
-    </Head>
-  );
+  return <></>
 }
