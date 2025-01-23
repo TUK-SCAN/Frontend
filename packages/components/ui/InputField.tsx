@@ -7,10 +7,11 @@ import HelperLabel from './Label/HelperLabel'
 import { InputType } from 'zlib'
 
 interface InputFieldProps {
-  type: 'simple' | 'number' | 'suffix' | 'search' | 'password'
-  value?: string
+  type: 'simple' | 'number' | 'search' | 'password'
+  value?: string | number | undefined
   inputRef?: React.RefObject<HTMLInputElement>
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void
+  suffix?: string
   placeholder?: string
   helperText?: string
   disabled?: boolean
@@ -23,6 +24,7 @@ const InputField = ({
   value,
   inputRef,
   onChange,
+  suffix,
   placeholder,
   helperText,
   disabled,
@@ -73,7 +75,7 @@ const InputField = ({
           placeholder={placeholder}
           className="text-black-800 w-full bg-transparent outline-none"
         />
-        {type === 'suffix' && <p className="text-black-400">@gmail.com</p>}
+        {suffix && <p className="text-black-400">{suffix}</p>}
         {type === 'password' && (
           <button
             type="button"
