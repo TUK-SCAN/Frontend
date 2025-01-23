@@ -1,3 +1,5 @@
+import React from 'react'
+
 const SpriteSheet = (
   <svg xmlns="http://www.w3.org/2000/svg" style={{ display: 'none' }}>
     <symbol
@@ -663,6 +665,28 @@ const SpriteSheet = (
           fill="currentColor"
         />
       </g>
+    </symbol>
+    <symbol id="ellipse" viewBox="0 0 16 16" fill="none">
+      <circle cx="8" cy="8" r="8" fill="currentColor" />
+    </symbol>
+
+    <symbol id="close" viewBox="0 0 16 16" fill="none">
+      <path
+        d="M3.4478 12.5513L12.5531 3.44599"
+        stroke="currentColor"
+        strokeOpacity="0.35"
+        strokeWidth="1.2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M3.44771 3.44585L12.553 12.5512"
+        stroke="currentColor"
+        strokeOpacity="0.35"
+        strokeWidth="1.2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
     </symbol>
   </svg>
 )
