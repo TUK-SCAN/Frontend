@@ -12,7 +12,11 @@ const StepSheet = () => {
   const { pageIndex } = useApplyContext()
   const StepComponent = Step[pageIndex as keyof typeof Step] // 컴포넌트 함수 가져오기
   return StepComponent ? (
-    <div className={clsx('flex flex-col gap-12 rounded-3xl bg-white p-12')}>
+    <div
+      className={clsx(
+        'flex w-[60rem] flex-col gap-12 rounded-3xl bg-white p-12'
+      )}
+    >
       <StepComponent />
     </div>
   ) : (

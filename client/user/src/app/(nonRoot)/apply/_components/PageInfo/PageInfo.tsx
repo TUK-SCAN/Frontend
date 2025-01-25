@@ -3,15 +3,19 @@ import clsx from 'clsx'
 import Icon from '@tookscan/components/ui/Icon/Icon'
 import { useApplyContext } from '@/app/(nonRoot)/apply/_contexts/ApplyContext'
 
-interface PageInfoProps {
-  pageIndex: number
-  setPageIndex: React.Dispatch<React.SetStateAction<number>>
-}
-
-const stepDescriptions: Record<number, string> = {
-  0: '스캔할 책의 정보를 작성해주세요.',
-  1: '책을 돌려받을 배송 정보를 입력해주세요.',
-  2: '이용 약관에 동의해주세요.',
+const stepDetails: Record<number, { title: string; description: string }> = {
+  0: {
+    title: '스캔정보 입력',
+    description: '스캔할 책의 정보를 작성해주세요.',
+  },
+  1: {
+    title: '배송정보 입력',
+    description: '책을 돌려받을 배송 정보를 입력해주세요.',
+  },
+  2: {
+    title: '이용약관 동의',
+    description: '이용 약관에 동의해주세요.',
+  },
 }
 
 const PageInfo = () => {
@@ -21,7 +25,7 @@ const PageInfo = () => {
       setPageIndex((prev: number) => prev - 1)
   }
   return (
-    <div className={clsx('flex flex-col gap-6')}>
+    <div className={clsx('flex w-full flex-col justify-start gap-6')}>
       <div className={clsx('flex flex-row gap-4')}>
         {[0, 1, 2].map((index) => (
           <Icon
@@ -39,10 +43,12 @@ const PageInfo = () => {
         <h2 className={clsx('text-2xl font-semibold text-blue-primary')}>
           STEP {pageIndex + 1}.
         </h2>
-        <h2 className={clsx('text-4xl font-bold')}>스캔정보 입력</h2>
+        <h2 className={clsx('text-4xl font-bold')}>
+          {stepDetails[pageIndex].title || '잘못된 단계입니다.'}
+        </h2>
       </div>
       <p className="text-xl text-black-800">
-        {stepDescriptions[pageIndex] || '잘못된 단계입니다.'}
+        {stepDetails[pageIndex].description || '잘못된 단계입니다.'}
       </p>
       {pageIndex !== 0 && (
         <button

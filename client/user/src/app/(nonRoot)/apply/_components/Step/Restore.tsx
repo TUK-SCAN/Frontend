@@ -25,7 +25,7 @@ const Restore = ({ title, price, type, isClicked, onClick }: RestoreProps) => {
           isClicked ? 'text-white' : 'text-black-400'
         )}
       >
-        <h3 className="flex text-2xl font-bold">{title}</h3>
+        <h3 className="flex whitespace-nowrap text-2xl font-bold">{title}</h3>
         <p className="flex text-xl">+{price.toLocaleString()}원</p>
       </div>
       <RestoreIcon type={type} isClicked={isClicked} />
