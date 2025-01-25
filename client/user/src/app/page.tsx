@@ -59,7 +59,6 @@ const FullScrollPage = () => {
   return (
     <>
       <Head>
-        {/* 기본 SEO */}
         <title>툭스캔, 가장 합리적인 비대면 스캔</title>
         <meta
           name="description"
@@ -79,10 +78,7 @@ const FullScrollPage = () => {
           content="비대면으로 간편하고, 안전하게! 북스캔의 새로운 기준을 소개드려요. 한 방에 툭스캔!"
         />
         <meta property="og:url" content="https://tookscan.com" />
-        <meta
-          property="og:image"
-          content="https://tookscan.com/assets/images/landing/tookscan_thumnail.png"
-        />
+        <meta property="og:image" content="/images/Logo.png" />
         <meta property="og:locale" content="ko_KR" />
 
         {/* Canonical Link */}
