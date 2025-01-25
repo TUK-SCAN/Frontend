@@ -7,6 +7,7 @@ import { LayoutProps } from '@/types/common'
 import Header from '@tookscan/components/ui/Header'
 import Footer from '@tookscan/components/ui/Footer'
 import Head from 'next/head'
+import { ModalProvider } from '@tookscan/components/app/ModalProvider'
 
 export default function RootLayout({ children }: LayoutProps) {
   return (
@@ -21,15 +22,19 @@ export default function RootLayout({ children }: LayoutProps) {
         {SpriteSheet}
         {CommonSpriteSheet}
         <QueryProvider>
-          <div className="relative flex min-h-screen flex-col">
-            <div className="fixed left-0 top-0 z-50 w-full">
-              <Header type="default" />
+          <ModalProvider>
+            <div className="relative flex min-h-screen flex-col">
+              <div className="fixed left-0 top-0 z-50 w-full">
+                <Header type="default" />
+              </div>
+              <main className="flex-1 overflow-hidden pt-[90px]">
+                {children}
+              </main>
+              <div className="mt-auto">
+                <Footer />
+              </div>
             </div>
-            <main className="flex-1 overflow-hidden pt-[90px]">{children}</main>
-            <div className="mt-auto">
-              <Footer />
-            </div>
-          </div>
+          </ModalProvider>
         </QueryProvider>
       </body>
     </html>
