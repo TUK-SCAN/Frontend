@@ -1,32 +1,31 @@
-import React from "react";
-import Icon from "./Icon/Icon";
+import React from 'react'
+import Icon from './Icon/Icon'
 
 interface CheckButtonProps {
-  isChecked?: boolean;
-  onClick: any;
-  size: "sm" | "lg";
+  isChecked?: boolean
+  onClick: any
+  size: 'sm' | 'lg'
 }
 
 const CheckButton = ({ isChecked, onClick, size }: CheckButtonProps) => {
-  const buttonSize = size === "lg" ? "h-[24px] w-[24px]" : "h-[16px] w-[16px]";
+  const buttonSize = size === 'lg' ? 'h-[24px] w-[24px]' : 'h-[16px] w-[16px]'
   const iconSize =
-    size === "lg" ? { width: 16, height: 16 } : { width: 10, height: 10 };
+    size === 'lg' ? { width: 16, height: 16 } : { width: 10, height: 10 }
 
   return (
-    <div className="flex h-[56px] items-center justify-between px-4 py-2">
+    <div className="flex px-4 py-2">
       <button
         className={`flex items-center justify-center rounded-full ${buttonSize} ${
           isChecked
-            ? "bg-blue-500 text-white"
-            : "border border-gray-300 bg-white"
+            ? 'bg-blue-500 text-white'
+            : 'border border-gray-300 bg-white'
         }`}
         onClick={onClick}
-        // {() => setIsChecked(!isChecked)}
       >
         {isChecked && <Icon id="check" {...iconSize} />}
       </button>
     </div>
-  );
-};
+  )
+}
 
-export default CheckButton;
+export default CheckButton
