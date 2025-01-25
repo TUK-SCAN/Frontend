@@ -6,6 +6,7 @@ export const colors = {
     pale: '#9EC8FF',
     light: '#6FA4FF',
     dark: '#416AD7',
+    disable: '#ECEEF0',
   },
   black: {
     50: '#F9F9FA',
@@ -21,8 +22,21 @@ export const colors = {
     DEFAULT: '#000000',
   },
   white: '#FFFFFF',
-  status: {
-    success: '#5592FC',
-    error: '#FF5E47',
+  error: '#FF5E47',
+  success: {
+    light: '#00E676',
+    dark: '#00A856',
+  },
+  notification: {
+    light: '#FFEA00',
+    dark: '#E4D100',
+  },
+  other: '#7B00FF',
+
+  text: {
+    normal: '#3C3F44',
+    alternative: '#838A94',
+    disable: '#CFD3DA',
+    assistive: 'ADB3BE',
   },
 }
