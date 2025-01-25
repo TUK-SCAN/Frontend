@@ -9,6 +9,7 @@ import {
   useApplyContext,
 } from '@/app/(nonRoot)/apply/_contexts/ApplyContext'
 import Icon from '@tookscan/components/ui/Icon/Icon'
+import { ToastProvider } from '@tookscan/components/ui/Modal/Toast'
 
 const ApplyContent = () => {
   const { books } = useApplyContext()
@@ -28,9 +29,13 @@ const ApplyContent = () => {
   }, [books])
 
   return (
-    <>
+    <div className="flex w-full flex-col items-center">
       <Banner type={3} />
-      <div className={clsx('flex w-full flex-col gap-6 px-36 py-20')}>
+      <div
+        className={clsx(
+          'flex w-full max-w-[1440px] flex-col items-center gap-6 px-36 py-20'
+        )}
+      >
         <PageInfo />
         <div className={clsx('flex w-full flex-row items-start gap-12')}>
           <StepSheet />
@@ -49,13 +54,15 @@ const ApplyContent = () => {
           )}
         </div>
       </div>
-    </>
+    </div>
   )
 }
 
 const Apply = () => (
   <ApplyProvider>
-    <ApplyContent />
+    <ToastProvider>
+      <ApplyContent />
+    </ToastProvider>
   </ApplyProvider>
 )
 
