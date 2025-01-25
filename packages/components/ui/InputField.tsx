@@ -10,6 +10,7 @@ interface InputFieldProps {
   type: 'simple' | 'number' | 'search' | 'password'
   value?: string | number | undefined
   inputRef?: React.RefObject<HTMLInputElement>
+  name?: string
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void
   suffix?: string
   placeholder?: string
@@ -23,6 +24,7 @@ const InputField = ({
   type,
   value,
   inputRef,
+  name,
   onChange,
   suffix,
   placeholder,
@@ -43,7 +45,7 @@ const InputField = ({
   }
 
   return (
-    <div className="flex w-96 flex-col gap-2">
+    <div className="flex w-full flex-col gap-2">
       <div
         className={clsx(
           'bg-blue-secondary flex h-[3.125rem] flex-row items-center gap-1 rounded-lg px-[1.12rem] py-3',
@@ -73,6 +75,7 @@ const InputField = ({
           disabled={disabled}
           type={getInputType(type, isPasswordVisible)}
           placeholder={placeholder}
+          name={name}
           className="text-black-800 w-full bg-transparent outline-none"
         />
         {suffix && <p className="text-black-400">{suffix}</p>}
