@@ -8,7 +8,7 @@ import clsx from 'clsx'
 import { BookInCart } from '@/app/(nonRoot)/apply/_components/index'
 
 const Purchase = () => {
-  const { books } = useApplyContext()
+  const { books, pageIndex, setPageIndex, terms } = useApplyContext()
 
   return (
     <div
@@ -36,7 +36,7 @@ const Purchase = () => {
           ))}
         </ul>
 
-        <div className={clsx('flex items-center justify-between px-4 pt-4')}>
+        <div className={clsx('flex items-center justify-between px-4 pt-8')}>
           <p className="font-semibold">배송비</p>
           <p>
             {hasNonDropBooks(books) ? (
@@ -52,12 +52,19 @@ const Purchase = () => {
       <Button
         size="lg"
         className="w-full"
-        disabled={books.length === 0}
+        disabled={
+          books.length === 0 ||
+          (!(terms.terms1 && terms.terms2 && terms.terms3) && pageIndex === 2)
+        }
         onClick={() => {
-          console.log('books:', books)
+          if (pageIndex === 0 || pageIndex === 1) {
+            setPageIndex((prev: number) => prev + 1)
+          } else if (pageIndex === 2) {
+            console.log('결제하기')
+          }
         }}
       >
-        다음
+        {pageIndex === 2 ? '결제하기' : '다음'}
       </Button>
     </div>
   )

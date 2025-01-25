@@ -4,9 +4,11 @@ import Icon from '@tookscan/components/ui/Icon/Icon'
 import Tag from '@tookscan/components/ui/Tag/Tag'
 import clsx from 'clsx'
 import React from 'react'
+import { calculatePrice } from '@/app/(nonRoot)/apply/_utils/calculateBookPrice'
 
 const BookInCart = (book: Books) => {
-  const { setBooks } = useApplyContext()
+  const { books, setBooks, setPageIndex } = useApplyContext()
+
   return (
     <div
       className={clsx('flex w-full flex-col rounded-xl bg-white p-4 align-top')}
@@ -16,6 +18,9 @@ const BookInCart = (book: Books) => {
         <button
           className="flex py-0.5"
           onClick={() => {
+            if (books.length === 1) {
+              setPageIndex(0)
+            }
             setBooks((prevBooks: Books[]) =>
               prevBooks.filter((prevBook) => prevBook.id !== book.id)
             )
@@ -38,7 +43,9 @@ const BookInCart = (book: Books) => {
           }[book.restoreOption] || '알 수 없음'}
         </Tag>
       </div>
-      <h3 className="text-sm text-black-400">{}</h3>
+      <h3 className="text-end text-sm font-semibold">
+        {calculatePrice(book).toLocaleString()}원
+      </h3>
     </div>
   )
 }

@@ -3,16 +3,11 @@ import TitleLabel from '@tookscan/components/ui/Label/TitleLabel'
 import InputField from '@tookscan/components/ui/InputField'
 import { useApplyContext } from '@/app/(nonRoot)/apply/_contexts/ApplyContext'
 import { Books } from '@/types/book'
-import { LayoutProps } from '@/types/common'
 import { Button } from '@tookscan/components/ui/Button'
 import Icon from '@tookscan/components/ui/Icon/Icon'
-import { Restore } from '@/app/(nonRoot)/apply/_components/index'
+import { Restore, Section } from '@/app/(nonRoot)/apply/_components/index'
 import clsx from 'clsx'
 import { v4 as uuidv4 } from 'uuid'
-
-const Section = ({ children }: LayoutProps) => {
-  return <div className="flex flex-col gap-1">{children}</div>
-}
 
 const restoreOptions = [
   { type: 'drop', title: '버려줘요', price: 0 },
