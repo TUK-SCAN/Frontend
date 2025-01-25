@@ -147,7 +147,7 @@ const OrderDetails = () => {
             <Button
               className="mt-6 w-full"
               variant="primary"
-              size="custom"
+              size="lg"
               onClick={handleSaveImage}
             >
               이미지 저장
