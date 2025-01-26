@@ -34,7 +34,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         'bg-blue-secondary text-blue-primary hover:bg-black hover:text-white',
       tertiary:
         'bg-white text-blue-primary border border-blue-primary hover:bg-blue-primary hover:text-white',
-      disabled: 'bg-black-100 text-black-400 cursor-not-allowed',
+      disabled: 'bg-blue-disabled text-text-disable cursor-not-allowed',
       error: 'bg-error text-white cursor-not-allowed',
     }
 

@@ -6,7 +6,7 @@ export const colors = {
     pale: '#9EC8FF',
     light: '#6FA4FF',
     dark: '#416AD7',
-    disable: '#ECEEF0',
+    disabled: '#ECEEF0',
   },
   black: {
     50: '#F9F9FA',
@@ -36,7 +36,7 @@ export const colors = {
   text: {
     normal: '#3C3F44',
     alternative: '#838A94',
-    disable: '#CFD3DA',
-    assistive: 'ADB3BE',
+    disabled: '#CFD3DA',
+    assistive: '#ADB3BE',
   },
 }
