@@ -69,35 +69,12 @@ const FullScrollPage = () => {
           content="북스캔, pdf 스캔, pdf 제작, 셀프 스캔, 비대면 스캔, 비대면 셀프스캔"
         />
         <meta name="author" content="툭스캔" />
-
-        {/* Open Graph */}
         <meta property="og:type" content="website" />
         <meta property="og:title" content="툭스캔, 가장 합리적인 비대면 스캔" />
         <meta
           property="og:description"
           content="비대면으로 간편하고, 안전하게! 북스캔의 새로운 기준을 소개드려요. 한 방에 툭스캔!"
         />
-        <meta property="og:url" content="https://tookscan.com" />
-        <meta property="og:image" content="/images/Logo.png" />
-        <meta property="og:locale" content="ko_KR" />
-
-        {/* Canonical Link */}
-        <link rel="canonical" href="https://tookscan.com" />
-
-        {/* Favicon 설정 */}
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="32x32"
-          href="/images/Logo.png"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="16x16"
-          href="/images/Logo.png"
-        />
-        <link rel="apple-touch-icon" sizes="180x180" href="/images/Logo.png" />
       </Head>
 
       <div ref={sectionsRef} className="relative h-screen overflow-hidden">
