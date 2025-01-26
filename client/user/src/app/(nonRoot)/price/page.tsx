@@ -15,7 +15,6 @@ const Price = () => {
           name="keywords"
           content="북스캔 가격, 북스캔 비용, 툭스캔 가격, 툭스캔 비용, 비대면 스캔 가격, 비대면 스캔 비용, 문서 스캔 가격, 문서 스캔 비용, OCR 스캔 서비스, 기업 스캔 솔루션, 대학교 스캔 가격, 대학교 스캔 비용, 대학교 스캔 가격, 대학교 북스캔 비용"
         />
-        <link rel="icon" type="image/png" href="/images/Logo.png" />
       </Head>
       <div>
         <Banner type={3} />
