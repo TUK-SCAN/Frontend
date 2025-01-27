@@ -30,16 +30,19 @@ const DetailBox = ({
   const handleSaveImage = async () => {
     try {
       const element = document.querySelector('.detail-box')
-      if (!element) throw new Error('저장할 요소를 찾을 수 없습니다.')
+      if (!element) {
+        alert('주문 상세 정보를 찾을 수 없습니다. 페이지를 새로고침해주세요.')
+        return
+      }
 
       const canvas = await html2canvas(element as HTMLElement)
       const link = document.createElement('a')
       link.href = canvas.toDataURL('image/png')
-      link.download = 'detail-box.png'
+      link.download = `주문상세_${orderDate}.png`
       link.click()
     } catch (error) {
       console.error('이미지 저장 중 오류 발생:', error)
-      alert('이미지 저장에 실패했습니다. 다시 시도해주세요.')
+      alert('이미지 저장 중 문제가 발생했습니다. 잠시 후 다시 시도해주세요.')
     }
   }
 
@@ -129,7 +132,9 @@ const DetailBox = ({
       className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50"
       onClick={handleOverlayClick} // 모달 외부 클릭 처리
     >
-      <div className="w-[640px] rounded-lg bg-white p-6 shadow-lg">{content}</div>
+      <div className="w-[640px] rounded-lg bg-white p-6 shadow-lg">
+        {content}
+      </div>
     </div>
   ) : (
     content
