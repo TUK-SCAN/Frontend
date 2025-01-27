@@ -33,7 +33,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       secondary:
         'bg-blue-secondary text-blue-primary hover:bg-blue-shadow hover:text-blue-dark',
       tertiary:
-        'bg-white text-blue-primary border border-blue-primary hover:bg-blue-primary hover:text-white',
+        'bg-white text-blue-primary border border-blue-primary hover:bg-blue-shadow hover:text-blue-dark',
       disabled: 'bg-black-100 text-black-400 cursor-not-allowed',
       error: 'bg-error text-white cursor-not-allowed',
     }

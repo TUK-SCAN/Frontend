@@ -2,10 +2,25 @@
 import { useState } from 'react'
 import Banner from '@tookscan/components/ui/Banner/Banner'
 import { LayoutProps } from '@/types/common'
+import Link from 'next/link'
+import { link } from 'fs'
 
 const ProfileLayout = ({ children }: LayoutProps) => {
   const [activeIndex, setActiveIndex] = useState<number | null>(null)
-  const items = ['개인정보 수정', '비밀번호 변경', '주문내역 조회']
+  const profileItems = [
+    {
+      title: '개인정보 수정',
+      link: '/profile/edit/info',
+    },
+    {
+      title: '비밀번호 변경',
+      link: '/profile/edit/password',
+    },
+    {
+      title: '주문내역 조회',
+      link: '/profile/order',
+    },
+  ]
 
   const handleClick = (index: number) => {
     setActiveIndex(index)
@@ -24,18 +39,20 @@ const ProfileLayout = ({ children }: LayoutProps) => {
               마이페이지
             </h2>
             <ul className="w-[250px] text-[16px]">
-              {items.map((item, index) => (
-                <li
-                  key={index}
-                  onClick={() => handleClick(index)}
-                  className={`flex cursor-pointer border border-blue-primary p-4 text-start ${
-                    activeIndex === index
-                      ? 'bg-blue-primary text-white'
-                      : 'text-blue-primary hover:bg-blue-primary hover:text-white'
-                  } `}
-                >
-                  {item}
-                </li>
+              {profileItems.map((item, index) => (
+                <Link href={`${item.link}`} key={index}>
+                  <li
+                    key={index}
+                    onClick={() => handleClick(index)}
+                    className={`flex cursor-pointer border-b border-blue-primary p-4 text-start ${
+                      activeIndex === index
+                        ? 'bg-blue-primary text-white'
+                        : 'text-blue-primary'
+                    } `}
+                  >
+                    {item.title}
+                  </li>
+                </Link>
               ))}
             </ul>
           </aside>

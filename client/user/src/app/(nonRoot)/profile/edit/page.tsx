@@ -6,7 +6,7 @@ import React from 'react'
 const Profile = () => {
   return (
     <div>
-      <AutoRedirect to="/profile/editInfo" title="" />
+      <AutoRedirect to="/profile/edit/info" />
     </div>
   )
 }

@@ -12,7 +12,7 @@ const EditInfoPage = () => {
           type="text"
           id="name"
           className="h-[50px] w-[380px] rounded-md bg-blue-secondary px-[18px] py-[12px]"
-          placeholder="저스틴"
+          placeholder="이지은"
         />
       </div>
 
