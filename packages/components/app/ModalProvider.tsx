@@ -2,7 +2,6 @@
 
 import React, { createContext, useState, ReactNode } from 'react'
 import Modal from '../ui/Modal/Modal'
-import { ModalType } from '../../types/modal'
 
 interface ModalContextType {
   openModal: (content: ReactNode) => void
@@ -17,9 +16,9 @@ export const ModalProvider: React.FC<{ children: ReactNode }> = ({
   children,
 }) => {
   const [modalContent, setModalContent] = useState<ReactNode | null>(null)
-  const [modalType, setModalType] = useState<ModalType | null>(null)
+  const [modalType, setModalType] = useState<string | null>(null)
 
-  const openModal = (type: ModalType, content: ReactNode) => {
+  const openModal = (type: string, content: ReactNode) => {
     setModalContent(content)
     setModalType(type)
   }

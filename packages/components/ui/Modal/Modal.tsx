@@ -1,10 +1,9 @@
 import React, { useEffect } from 'react'
 import clsx from 'clsx'
 import useModal from '../../../hooks/useModal'
-import { ModalType } from '../../../types/modal'
 
 interface ModalProps {
-  type: ModalType
+  type: string
   children: React.ReactNode
 }
 
