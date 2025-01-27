@@ -5,7 +5,7 @@ import AutoRedirect from '@tookscan/components/app/AutoRedirect'
 const PrivacyPage = () => {
   return (
     <div>
-      <AutoRedirect to="/privacy/Agreement1" />
+      <AutoRedirect to="/privacy/purpose" />
     </div>
   )
 }

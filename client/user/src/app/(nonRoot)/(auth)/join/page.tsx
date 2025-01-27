@@ -8,7 +8,7 @@ import StepIndicator from './_components/StepIndicator'
 import Link from 'next/link'
 import Modal from './_components/Modal'
 
-const SignUpPage = () => {
+const Join = () => {
   const [step, setStep] = useState(1)
   const [name, setName] = useState('')
   const [phone, setPhone] = useState('')
@@ -124,9 +124,9 @@ const SignUpPage = () => {
                 onChange={(e) => setPhone(e.target.value)}
               />
               <Button
-                className="w-[100px]"
+                className="whitespace-nowrap px-6"
                 variant="primary"
-                size="custom"
+                size="default"
                 onClick={() => setShowVerificationField(true)}
               >
                 인증받기
@@ -140,13 +140,13 @@ const SignUpPage = () => {
                   value={verificationCode}
                   onChange={(e) => setVerificationCode(e.target.value)}
                 />
-                <span className="text-xs text-red-500">
+                <span className="whitespace-nowrap px-4 text-xs text-red-500">
                   {timeLeft > 0 ? formatTime(timeLeft) : '시간 초과'}
                 </span>
                 <Button
-                  className="w-[100px]"
+                  className="whitespace-nowrap px-6"
                   variant="primary"
-                  size="custom"
+                  size="md"
                   onClick={handleVerification}
                   disabled={timeLeft <= 0}
                 >
@@ -239,7 +239,7 @@ const SignUpPage = () => {
           <Button
             className="mt-4 w-full"
             variant={isNextButtonEnabled ? 'primary' : 'disabled'}
-            size="custom"
+            size="lg"
             disabled={!isNextButtonEnabled}
             onClick={() => setStep(2)}
           >
@@ -263,10 +263,10 @@ const SignUpPage = () => {
               <Button
                 className="w-[100px]"
                 variant="primary"
-                size="custom"
+                size="md"
                 onClick={handleIdValidation}
               >
-                중복확인
+                중복 확인
               </Button>
             </div>
             {idValidationMessage && (
@@ -299,12 +299,12 @@ const SignUpPage = () => {
           </div>
 
           {/* 회원가입 버튼 */}
-          <Link href="/signSuccess">
+          <Link href="/welcome">
             {/* 회원가입 버튼 */}
             <Button
               className="mt-4 w-full"
               variant="primary"
-              size="custom"
+              size="lg"
               onClick={() => console.log(`회원가입`)}
             >
               가입하기
@@ -324,4 +324,4 @@ const SignUpPage = () => {
   )
 }
 
-export default SignUpPage
+export default Join

@@ -1,8 +1,8 @@
 'use client'
 
 import * as React from 'react'
-import { cn } from '../../utils/cn'
 import Icon from './Icon/Icon'
+import clsx from 'clsx'
 
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
@@ -26,12 +26,12 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     ref
   ) => {
     const baseStyles =
-      'inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-primary disabled:pointer-events-none group'
+      'inline-flex items-center justify-center rounded-md transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-primary disabled:pointer-events-none group whitespace-nowrap'
 
     const variantStyles = {
-      primary: 'bg-blue-primary text-white hover:bg-black hover:text-white',
+      primary: 'bg-blue-primary text-white hover:bg-blue-dark hover:text-white',
       secondary:
-        'bg-blue-secondary text-blue-primary hover:bg-black hover:text-white',
+        'bg-blue-secondary text-blue-primary hover:bg-blue-shadow hover:text-blue-dark',
       tertiary:
         'bg-white text-blue-primary border border-blue-primary hover:bg-blue-primary hover:text-white',
       disabled: 'bg-black-100 text-black-400 cursor-not-allowed',
@@ -39,17 +39,17 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     }
 
     const sizeStyles = {
-      default: 'w-[380px] h-[48px]',
-      lg: 'w-[380px] h-[60px]',
-      md: 'w-[380px] h-[48px]',
-      sm: 'w-[380px] h-[38px]',
+      default: '',
+      lg: 'text-lg py-[1.125rem] px-[1.75rem]',
+      md: 'text-sm py-[0.875rem] px-[1.75rem]',
+      sm: 'text-xs py-[0.625rem] px-[1.25rem]',
     }
 
     const isDisabled = disabled ? 'disabled' : variant
 
     return (
       <button
-        className={cn(
+        className={clsx(
           baseStyles,
           variantStyles[isDisabled],
           sizeStyles[size],
@@ -64,7 +64,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         {showIcon && (
           <Icon
             id="plus"
-            className={cn(
+            className={clsx(
               'mr-2',
               disabled
                 ? 'text-black-400'

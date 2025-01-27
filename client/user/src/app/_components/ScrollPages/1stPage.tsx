@@ -4,17 +4,15 @@ import React from 'react'
 import Image from 'next/image'
 import Icon from '@tookscan/components/ui/Icon/Icon'
 import MainCard from '@/assets/images/landing/MainCard.svg'
+import { Button } from '@tookscan/components/ui/Button'
+import { useRouter } from 'next/navigation'
 
 const FirstPage = () => {
+  const router = useRouter()
   return (
-    <section
-      className="relative flex items-center justify-center bg-blue-primary"
-      style={{
-        height: 'calc(100vh - 90px)', // 헤더 높이를 제외한 영역
-      }}
-    >
+    <div className="flex items-center justify-center bg-blue-primary">
       <div
-        className="relative flex w-full items-center justify-between"
+        className="flex w-full items-center justify-between"
         style={{
           maxWidth: '1400px', // 고정 최대 너비
           height: '100%',
@@ -47,21 +45,22 @@ const FirstPage = () => {
           </h1>
 
           {/* 버튼 */}
-          <button
-            className="rounded-lg bg-black text-white transition-colors hover:bg-white hover:text-black"
-            style={{
-              fontSize: '20px', // 버튼 텍스트 크기
-              width: '280px', // 버튼 너비
-              height: '60px', // 버튼 높이
+          <Button
+            variant="secondary"
+            size="lg"
+            className="w-96 hover:bg-blue-secondary"
+            onClick={() => {
+              // 신청 페이지로 이동
+              router.push('/apply')
             }}
           >
             신청하러가기
-          </button>
+          </Button>
         </div>
 
         {/* 오른쪽 이미지 */}
         <div
-          className="flex items-center justify-center overflow-hidden"
+          className="flex items-center justify-center"
           style={{
             flex: '1 1 50%',
             width: '900px', // 가로 길이
@@ -82,7 +81,7 @@ const FirstPage = () => {
           />
         </div>
       </div>
-    </section>
+    </div>
   )
 }
 

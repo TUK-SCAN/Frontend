@@ -4,7 +4,7 @@ import { LayoutProps } from '@/types/common'
 
 export default function Layout({ children }: LayoutProps) {
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col items-center">
       <Banner type={1} />
       {children}
     </div>

@@ -3,15 +3,12 @@
 import React from 'react'
 import SmallCard from '../SmallCard'
 import { Button } from '@tookscan/components/ui/Button'
+import { useRouter } from 'next/navigation'
 
 const ThirdPage = () => {
+  const router = useRouter()
   return (
-    <div
-      className="flex flex-col items-center justify-center bg-white"
-      style={{
-        height: 'calc(100vh - 90px)', // 헤더 높이를 제외한 영역
-      }}
-    >
+    <div className="flex flex-col items-center justify-center bg-white">
       {/* 서비스 흐름도 */}
       <div
         className="rounded-full bg-blue-secondary font-medium text-blue-primary"
@@ -102,12 +99,10 @@ const ThirdPage = () => {
         }}
       >
         <Button
+          size="lg"
           variant="secondary"
-          onClick={() => alert('스캔하러가기')}
-          style={{
-            fontSize: '16px', // 고정 버튼 글씨 크기
-            padding: '10px 16px', // 고정 버튼 패딩
-          }}
+          onClick={() => router.push('/apply')}
+          className="w-96"
         >
           스캔하러가기
         </Button>

@@ -18,7 +18,7 @@ const Purchase = () => {
     setPageIndex,
     terms,
     ignoreBeforeUnload,
-    shippingInfoRef,
+    shippingInfo,
   } = useApplyContext()
   const { openModal, closeModal } = useModal()
 
@@ -64,17 +64,20 @@ const Purchase = () => {
       <Button
         size="lg"
         className="w-full"
+        variant="primary"
         disabled={
           books.length === 0 ||
           (!(terms.terms1 && terms.terms2 && terms.terms3) &&
             pageIndex === 2) ||
           (pageIndex === 1 &&
-            !(
-              shippingInfoRef.current.recipient &&
-              shippingInfoRef.current.phone &&
-              shippingInfoRef.current.address &&
-              shippingInfoRef.current.addressDetail
-            ))
+            (hasNonDropBooks(books)
+              ? !(
+                  shippingInfo.recipient &&
+                  shippingInfo.phone &&
+                  shippingInfo.address &&
+                  shippingInfo.addressDetail
+                )
+              : !(shippingInfo.recipient && shippingInfo.phone)))
         }
         onClick={() => {
           if (pageIndex === 0 || pageIndex === 1) {

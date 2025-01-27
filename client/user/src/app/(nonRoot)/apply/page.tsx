@@ -9,7 +9,6 @@ import {
   useApplyContext,
 } from '@/app/(nonRoot)/apply/_contexts/ApplyContext'
 import Icon from '@tookscan/components/ui/Icon/Icon'
-import { ToastProvider } from '@tookscan/components/ui/Modal/Toast'
 
 const ApplyContent = () => {
   const { books, ignoreBeforeUnload } = useApplyContext()
@@ -61,9 +60,7 @@ const ApplyContent = () => {
 
 const Apply = () => (
   <ApplyProvider>
-    <ToastProvider>
-      <ApplyContent />
-    </ToastProvider>
+    <ApplyContent />
   </ApplyProvider>
 )
 

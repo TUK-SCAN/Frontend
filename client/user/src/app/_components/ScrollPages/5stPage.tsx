@@ -42,12 +42,7 @@ const FifthPage = () => {
   const infiniteReviews = [...reviews, ...reviews, ...reviews] // 무한 슬라이드를 위한 배열 복제
 
   return (
-    <div
-      className="relative h-full w-full"
-      style={{
-        height: '900px', // 고정된 높이 설정
-      }}
-    >
+    <div className="relative h-full w-full">
       {/* 배경 이미지 */}
       <div
         className="absolute inset-0 -z-10"

@@ -112,9 +112,11 @@ const Success = () => {
         >
           마이페이지
         </Button>
-        <Button className="flex w-full" variant="secondary" size="lg">
-          홈으로
-        </Button>
+        <Link href="/">
+          <Button className="flex w-full" variant="tertiary" size="lg">
+            홈으로
+          </Button>
+        </Link>
       </div>
     </div>
   )

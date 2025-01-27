@@ -25,13 +25,7 @@ const FourthPage = () => {
   }
 
   return (
-    <section
-      className="relative flex flex-col items-start justify-center bg-white"
-      style={{
-        height: 'calc(100vh - 90px)', // 헤더 높이를 제외한 영역
-        paddingLeft: '10%', // 왼쪽 정렬
-      }}
-    >
+    <div className="relative flex flex-col items-start justify-center bg-white">
       {/* 서비스 개요 */}
       <div
         className="rounded-full bg-blue-secondary font-medium text-blue-primary"
@@ -155,7 +149,7 @@ const FourthPage = () => {
           ></div>
         ))}
       </div>
-    </section>
+    </div>
   )
 }
 

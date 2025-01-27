@@ -66,11 +66,11 @@ const FindIdPage = () => {
   }
 
   return (
-    <div className="flex min-h-screen flex-col items-center bg-gray-100">
+    <div className="flex min-h-screen flex-col items-center gap-3 py-12">
       {/* 타이틀 */}
-      <div className="mt-10 w-[440px] text-left">
-        <div className="text-xs font-bold text-blue-primary">회원정보 찾기</div>
-        <div className="mt-2 text-lg font-bold leading-tight text-black-800">
+      <div className="min-w-[440px] py-12 text-left">
+        <div className="text-lg font-bold text-blue-primary">회원정보 찾기</div>
+        <div className="text-3xl font-bold leading-tight text-black-800">
           <p>계정정보를</p>
           <p>잊으셨나요?</p>
         </div>
@@ -90,7 +90,6 @@ const FindIdPage = () => {
             비밀번호찾기
           </Link>
         </div>
-        <div className="h-[1px] w-full bg-gray-300"></div>
         {/* 입력 필드 */}
         <div className="mt-4 space-y-4">
           <InputField
@@ -109,7 +108,7 @@ const FindIdPage = () => {
             <Button
               className="w-[120px]"
               variant="primary"
-              size="custom"
+              size="md"
               onClick={() => setTimeLeft(90)}
             >
               인증받기
@@ -129,7 +128,7 @@ const FindIdPage = () => {
               <Button
                 className="w-[100px]"
                 variant="primary"
-                size="custom"
+                size="md"
                 onClick={handleVerificationCheck}
                 disabled={timeLeft <= 0}
               >
@@ -142,7 +141,7 @@ const FindIdPage = () => {
         <Button
           className="mt-4 w-full"
           variant={isVerified ? 'primary' : 'disabled'}
-          size="custom"
+          size="md"
           onClick={handleFindId}
           disabled={!isVerified || !name || !phone || timeLeft <= 0}
         >
