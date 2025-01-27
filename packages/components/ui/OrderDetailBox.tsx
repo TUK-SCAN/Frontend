@@ -1,7 +1,7 @@
 'use client'
 
-import React, { useState } from 'react'
-import { Button } from '@tookscan/components/ui/Button'
+import React from 'react'
+import { Button } from './Button'
 import html2canvas from 'html2canvas'
 
 interface DetailBoxProps {
@@ -109,7 +109,7 @@ const DetailBox = ({
           <Button
             className="flex-1"
             variant="secondary"
-            size="custom"
+            size="default"
             onClick={onCloseModal}
           >
             취소
@@ -118,7 +118,7 @@ const DetailBox = ({
         <Button
           className={isModal ? 'flex-1' : 'w-full'}
           variant="primary"
-          size="custom"
+          size="default"
           onClick={handleSaveImage}
         >
           이미지 저장
