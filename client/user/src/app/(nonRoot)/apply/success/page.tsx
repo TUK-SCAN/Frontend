@@ -10,7 +10,7 @@ import Tag from '@tookscan/components/ui/Tag/Tag'
 import { useToast } from '@tookscan/components/ui/Modal/Toast'
 
 const Success = () => {
-  const searchParams = useSearchParams()
+  const searchParams = useSearchParams() || ''
   const router = useRouter()
   const order = searchParams.get('order')
   const showToast = useToast()
