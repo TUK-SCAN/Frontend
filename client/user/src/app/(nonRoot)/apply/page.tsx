@@ -12,12 +12,13 @@ import Icon from '@tookscan/components/ui/Icon/Icon'
 import { ToastProvider } from '@tookscan/components/ui/Modal/Toast'
 
 const ApplyContent = () => {
-  const { books } = useApplyContext()
+  const { books, ignoreBeforeUnload } = useApplyContext()
 
   useEffect(() => {
     const handleBeforeUnload = (event: BeforeUnloadEvent) => {
-      if (books.length > 0) {
+      if (books.length > 0 && !ignoreBeforeUnload.current) {
         event.preventDefault()
+        event.returnValue = '페이지를 나가시면 작성 중인 내용이 사라집니다! '
       }
     }
 
