@@ -9,7 +9,6 @@ interface ConsentLabelProps {
   size: 'sm' | 'lg'
   onClick?: () => void
   moreContent?: string
-  moreContentStatus?: boolean
   onMoreClick?: () => void
 }
 
@@ -19,7 +18,6 @@ const ConsentLabel = ({
   size,
   onClick,
   moreContent,
-  moreContentStatus,
   onMoreClick,
 }: ConsentLabelProps) => {
   return (

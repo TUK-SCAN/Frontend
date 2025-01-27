@@ -21,7 +21,7 @@ const GradientCard = ({ title, description, iconSrc }: GradientCardProps) => {
       }}
     >
       {/* 텍스트 영역 */}
-      <div className="relative z-10">
+      <div className="z-10">
         {/* 제목 */}
         <h3
           className="font-bold text-white"

@@ -123,8 +123,8 @@ const data: TableRow[] = [
 
 const AgreementTable = () => {
   return (
-    <div className="mx-auto flex max-w-6xl flex-col justify-center px-4 py-8">
-      <div className="mb-[1.5rem] flex w-[22rem] items-center justify-start">
+    <div className="mx-auto flex flex-col justify-center gap-12">
+      <div className="flex w-[22rem] items-center justify-start">
         <div>
           <h2 className="mb-4 text-[1.25rem] font-bold text-black">
             개인정보 수집목적 및 이용목적
@@ -139,8 +139,8 @@ const AgreementTable = () => {
       </div>
       <div className="flex flex-col items-center justify-center text-center">
         <div className="flex items-center justify-center overflow-hidden rounded-lg">
-          <table className="w-full border-collapse border border-gray-200 text-[1.125rem] [border-style:solid]">
-            <thead className="bg-blue-secondary text-blue-primary">
+          <table className="w-full border-collapse border border-gray-200 [border-style:solid]">
+            <thead className="bg-blue-secondary text-sm text-blue-primary">
               <tr>
                 <th className="border border-gray-200 px-4 py-2 text-center [border-style:solid]">
                   구분
@@ -159,7 +159,7 @@ const AgreementTable = () => {
                 </th>
               </tr>
             </thead>
-            <tbody>
+            <tbody className="text-xs">
               {data.map((row, index) => (
                 <tr key={index}>
                   {/* category 열 병합 */}

@@ -7,12 +7,7 @@ import Hammer from '@/assets/images/landing/Hammer.svg'
 
 const SecondPage = () => {
   return (
-    <section
-      className="flex flex-col items-center justify-center bg-white"
-      style={{
-        height: 'calc(100vh - 90px)', // 헤더 높이를 제외한 영역
-      }}
-    >
+    <div className="flex flex-col items-center justify-center bg-white">
       {/* 서비스 소개 */}
       <div
         className="rounded-full bg-blue-secondary text-center font-medium text-blue-primary"
@@ -58,7 +53,7 @@ const SecondPage = () => {
           iconSrc={Hammer}
         />
       </div>
-    </section>
+    </div>
   )
 }
 

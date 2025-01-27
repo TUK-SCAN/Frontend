@@ -3,5 +3,5 @@
 import AutoRedirect from '@tookscan/components/app/AutoRedirect'
 
 export default function Id() {
-  return <AutoRedirect to="/id/reset" title="아이디 찾기" />
+  return <AutoRedirect to="/id/reset" />
 }

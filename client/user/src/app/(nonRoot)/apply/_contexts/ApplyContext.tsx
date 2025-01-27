@@ -12,8 +12,8 @@ interface ApplyContextType {
   setPageIndex: React.Dispatch<React.SetStateAction<number>>
   books: Books[]
   setBooks: React.Dispatch<React.SetStateAction<Books[]>>
-  shippingInfoRef: React.MutableRefObject<ShippingInfo>
-  updateShippingInfo: (key: keyof ShippingInfo, value: string) => void
+  shippingInfo: ShippingInfo
+  setShippingInfo: React.Dispatch<React.SetStateAction<ShippingInfo>>
   terms: Terms
   setTerms: (terms: Terms) => void
   ignoreBeforeUnload: React.MutableRefObject<boolean>
@@ -24,13 +24,10 @@ const ApplyContext = createContext<ApplyContextType | undefined>(undefined)
 export const ApplyProvider = ({ children }: { children: ReactNode }) => {
   const [pageIndex, setPageIndex] = useState<number>(0)
   const [books, setBooks] = useState<Books[]>([])
-  const shippingInfoRef = useRef<ShippingInfo>(initialShippingInfo)
+  const [shippingInfo, setShippingInfo] =
+    useState<ShippingInfo>(initialShippingInfo)
   const [terms, setTerms] = useState<Terms>(initialTerms)
   const ignoreBeforeUnload = useRef<boolean>(false)
-
-  const updateShippingInfo = (key: keyof ShippingInfo, value: string) => {
-    shippingInfoRef.current[key] = value
-  }
 
   return (
     <ApplyContext.Provider
@@ -39,8 +36,8 @@ export const ApplyProvider = ({ children }: { children: ReactNode }) => {
         setPageIndex,
         books,
         setBooks,
-        shippingInfoRef,
-        updateShippingInfo,
+        shippingInfo,
+        setShippingInfo,
         terms,
         setTerms,
         ignoreBeforeUnload,

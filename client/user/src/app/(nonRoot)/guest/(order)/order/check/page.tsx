@@ -3,8 +3,10 @@
 import React from 'react'
 import InputField from '@tookscan/components/ui/InputField'
 import { Button } from '@tookscan/components/ui/Button'
+import { useRouter } from 'next/navigation'
 
 const GuestOrderInquiry = () => {
+  const router = useRouter()
   return (
     <div className="flex min-h-screen flex-col items-center bg-gray-100">
       {/* 타이틀 */}
@@ -44,13 +46,20 @@ const GuestOrderInquiry = () => {
           />
         </div>
         {/* 조회 버튼 */}
-        <Button className="mt-6 w-full" variant="primary" size="custom">
+        <Button
+          className="mt-6 w-full"
+          variant="primary"
+          size="lg"
+          onClick={() => {
+            router.push('/guest/order/list')
+          }}
+        >
           조회
         </Button>
         {/* 하단 상자 */}
-        <div className="mt-6 flex h-[50px] w-full items-center justify-center rounded-lg border border-gray-300 bg-gray-100 text-center text-sm text-gray-600 underline">
+        <button className="mt-6 flex h-[50px] w-full items-center justify-center rounded-lg border border-gray-300 bg-gray-100 text-center text-sm text-gray-600 underline">
           주문번호를 잊었어요.
-        </div>
+        </button>
       </div>
     </div>
   )

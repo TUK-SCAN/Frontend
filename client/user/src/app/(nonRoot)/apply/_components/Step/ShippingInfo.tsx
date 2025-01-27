@@ -19,14 +19,14 @@ const DummyUserData = {
 }
 
 const ShippingInfo = React.memo(() => {
-  const { books, shippingInfoRef, updateShippingInfo } = useApplyContext()
+  const { books, shippingInfo, setShippingInfo } = useApplyContext()
   const showToast = useToast()
   const { openModal, closeModal } = useModal()
   const [isSameAsDefault, setIsSameAsDefault] = useState(false)
   const data = DummyUserData
 
   useEffect(() => {
-    Object.entries(shippingInfoRef.current).forEach(([key, value]) => {
+    Object.entries(shippingInfo).forEach(([key, value]) => {
       const inputElement = document.querySelector<HTMLInputElement>(
         `input[name="${key}"]`
       )
@@ -38,29 +38,25 @@ const ShippingInfo = React.memo(() => {
 
   const checkIfFieldsMatch = () => {
     const isMatching = Object.entries(data).every(([key, value]) => {
-      return (
-        shippingInfoRef.current[key as keyof typeof shippingInfoRef.current] ===
-        value
-      )
+      return shippingInfo[key as keyof typeof shippingInfo] === value
     })
     setIsSameAsDefault(isMatching)
   }
 
-  const handleInputChange = (
-    key: keyof typeof shippingInfoRef.current,
-    value: string
-  ) => {
-    updateShippingInfo(key, value)
+  const handleInputChange = (key: keyof typeof shippingInfo, value: string) => {
+    setShippingInfo((prev) => ({
+      ...prev,
+      [key]: value,
+    }))
     checkIfFieldsMatch()
   }
 
   useEffect(() => {
     const isSame = Object.entries(data).every(
-      ([key, value]) =>
-        shippingInfoRef.current[key as keyof typeof data] === value
+      ([key, value]) => shippingInfo[key as keyof typeof data] === value
     )
     setIsSameAsDefault(isSame)
-  }, [shippingInfoRef.current])
+  }, [shippingInfo])
 
   return (
     <div className="flex flex-col justify-start gap-4">
@@ -78,35 +74,38 @@ const ShippingInfo = React.memo(() => {
         size="lg"
         onClick={() => {
           if (isSameAsDefault) {
-            Object.entries(shippingInfoRef.current).forEach(([key]) => {
-              if (key !== 'request') {
-                shippingInfoRef.current[
-                  key as keyof typeof shippingInfoRef.current
-                ] = ''
-                const inputElement = document.querySelector<HTMLInputElement>(
-                  `input[name="${key}"]`
-                )
-                if (inputElement) {
-                  inputElement.value = ''
+            setShippingInfo((prev) => {
+              const updatedInfo = { ...prev }
+              Object.keys(updatedInfo).forEach((key) => {
+                if (key !== 'request') {
+                  updatedInfo[key as keyof typeof updatedInfo] = ''
+                  const inputElement = document.querySelector<HTMLInputElement>(
+                    `input[name="${key}"]`
+                  )
+                  if (inputElement) {
+                    inputElement.value = ''
+                  }
                 }
-              }
+              })
+              return updatedInfo
             })
             setIsSameAsDefault(false)
           } else {
-            Object.entries(data).forEach(([key, value]) => {
-              if (key in shippingInfoRef.current) {
-                shippingInfoRef.current[
-                  key as keyof typeof shippingInfoRef.current
-                ] = value
-                const inputElement = document.querySelector<HTMLInputElement>(
-                  `input[name="${key}"]`
-                )
-                if (inputElement) {
-                  inputElement.value = value || ''
+            setShippingInfo((prev) => {
+              const updatedInfo = { ...prev }
+              Object.entries(data).forEach(([key, value]) => {
+                if (key in updatedInfo) {
+                  updatedInfo[key as keyof typeof updatedInfo] = value || ''
+                  const inputElement = document.querySelector<HTMLInputElement>(
+                    `input[name="${key}"]`
+                  )
+                  if (inputElement) {
+                    inputElement.value = value || ''
+                  }
                 }
-              }
+              })
+              return updatedInfo
             })
-
             setIsSameAsDefault(true)
           }
         }}
@@ -116,7 +115,7 @@ const ShippingInfo = React.memo(() => {
         <TitleLabel size="lg" type="required" title="받는 이" />
         <InputField
           type="simple"
-          name="recipient"
+          value={shippingInfo.recipient}
           onChange={(e) => handleInputChange('recipient', e.target.value)}
           placeholder="이지은"
         />
@@ -125,7 +124,7 @@ const ShippingInfo = React.memo(() => {
         <TitleLabel size="lg" type="required" title="전화번호" />
         <InputField
           type="simple"
-          name="phone"
+          value={shippingInfo.phone}
           onChange={(e) => {
             const input = e.target as HTMLInputElement
             const rawValue = input.value.replace(/\D/g, '')
@@ -156,12 +155,12 @@ const ShippingInfo = React.memo(() => {
         <div className="flex flex-row gap-2">
           <InputField
             type="simple"
-            name="email"
+            value={shippingInfo.email}
             onChange={(e) => handleInputChange('email', e.target.value)}
             placeholder="support@tookscan.com"
           />
           <Button
-            size="custom"
+            size="md"
             className="whitespace-nowrap px-6 py-3"
             onClick={() => {
               showToast('테스트 메일을 전송 했습니다.', 'success', 'mail-heart') // TODO: 테스트 메일 발송 후 성공 및 실패 로직 추가
@@ -186,11 +185,11 @@ const ShippingInfo = React.memo(() => {
                 onChange={(e) => handleInputChange('address', e.target.value)}
                 placeholder="주소"
                 readOnly={true}
-                value={shippingInfoRef.current.address || ''}
+                value={shippingInfo.address || ''}
               />
 
               <Button
-                size="custom"
+                size="md"
                 className="whitespace-nowrap px-6 py-3"
                 onClick={() => {
                   console.log('open modal')
@@ -205,7 +204,7 @@ const ShippingInfo = React.memo(() => {
                         if (addressInput) {
                           addressInput.value = e.target.value
                         }
-                        shippingInfoRef.current.address = e.target.value
+                        shippingInfo.address = e.target.value
                       }}
                     />
                   )
@@ -218,7 +217,7 @@ const ShippingInfo = React.memo(() => {
           <Section>
             <InputField
               type="simple"
-              name="addressDetail"
+              value={shippingInfo.addressDetail}
               onChange={(e) =>
                 handleInputChange('addressDetail', e.target.value)
               }
@@ -231,7 +230,7 @@ const ShippingInfo = React.memo(() => {
         <TitleLabel size="lg" type="default" title="요청사항" />
         <InputField
           type="simple"
-          name="request"
+          value={shippingInfo.request}
           onChange={(e) => handleInputChange('request', e.target.value)}
           placeholder="배송 시 요청사항을 입력해주세요."
         />

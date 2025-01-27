@@ -60,11 +60,11 @@ const FindPwPage = () => {
   }
 
   return (
-    <div className="flex min-h-screen flex-col items-center bg-gray-100">
+    <div className="flex min-h-screen flex-col items-center gap-3 py-12">
       {/* 타이틀 */}
-      <div className="mt-10 w-[440px] text-left">
-        <div className="text-xs font-bold text-blue-primary">회원정보 찾기</div>
-        <div className="mt-2 text-lg font-bold leading-tight text-black-800">
+      <div className="min-w-[440px] py-12 text-left">
+        <div className="text-lg font-bold text-blue-primary">회원정보 찾기</div>
+        <div className="text-3xl font-bold leading-tight text-black-800">
           <p>계정정보를</p>
           <p>잊으셨나요?</p>
         </div>
@@ -84,7 +84,6 @@ const FindPwPage = () => {
             비밀번호찾기
           </div>
         </div>
-        <div className="h-[1px] w-full bg-gray-300"></div> {/* 디바이더 */}
         {/* 1단계: 아이디 입력 */}
         {step === 1 && (
           <div className="mt-4 space-y-4">
@@ -97,7 +96,7 @@ const FindPwPage = () => {
             <Button
               className="mt-4 w-full"
               variant="primary"
-              size="custom"
+              size="md"
               onClick={() => setStep(2)} // 다음 단계로 이동
               disabled={!id}
             >
@@ -124,7 +123,7 @@ const FindPwPage = () => {
               <Button
                 className="w-[120px]"
                 variant="primary"
-                size="custom"
+                size="md"
                 onClick={() => setTimeLeft(90)}
               >
                 인증받기
@@ -144,7 +143,7 @@ const FindPwPage = () => {
                 <Button
                   className="w-[100px]"
                   variant="primary"
-                  size="custom"
+                  size="md"
                   onClick={handleVerification}
                   disabled={timeLeft <= 0}
                 >
@@ -166,7 +165,7 @@ const FindPwPage = () => {
               <Button
                 className="w-[48%]"
                 variant="secondary"
-                size="custom"
+                size="md"
                 onClick={() => setStep(1)}
               >
                 이전
@@ -174,7 +173,7 @@ const FindPwPage = () => {
               <Button
                 className="w-[48%]"
                 variant={isVerified ? 'primary' : 'disabled'}
-                size="custom"
+                size="md"
                 onClick={handleModal}
                 disabled={!name || !phone || !isVerified}
               >

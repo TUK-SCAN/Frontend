@@ -2,6 +2,7 @@
 
 import React from 'react'
 import Icon from '../ui/Icon/Icon'
+import Link from 'next/link'
 
 const Footer = () => {
   return (
@@ -39,10 +40,31 @@ const Footer = () => {
 
         {/* 대표자 정보 */}
         <p className="text-[10px] text-black/55 lg:text-[14px]">
-          대표자 민경훈 | mkh09290929@naver.com | 010-7604-8320
+          대표자 민경훈 |{' '}
+          <button
+            onClick={() =>
+              navigator.clipboard.writeText('support@tookscan.com')
+            }
+            className="hover:text-blue-500 hover:underline"
+            title="Copy"
+          >
+            support@tookscan.com
+          </button>{' '}
+          |{' '}
+          <button
+            onClick={() => navigator.clipboard.writeText('01076048320')}
+            className="hover:text-blue-500 hover:underline"
+            title="Copy"
+          >
+            010-7604-8320
+          </button>
         </p>
+
         <p className="text-[10px] text-black/55 lg:text-[14px]">
-          이용약관 | 개인정보 처리방침
+          이용약관 |{' '}
+          <Link href="/privacy" className="hover:text-blue-500 hover:underline">
+            개인정보 처리방침
+          </Link>
         </p>
 
         {/* 공백 */}

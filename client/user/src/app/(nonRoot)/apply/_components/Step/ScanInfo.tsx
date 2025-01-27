@@ -91,6 +91,7 @@ const ScanInfo = () => {
       </Section>
       <Button
         size="lg"
+        variant="secondary"
         type="submit"
         onClick={() => {
           setBooks((prev) => [...prev, { ...currentBook, id: uuidv4() }])
