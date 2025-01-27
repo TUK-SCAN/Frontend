@@ -17,7 +17,7 @@ const SearchAddress = ({ onChange, closeModal }: SearchAddressProps) => {
   const [keyword, setKeyword] = useState<string>('')
   const [center, setCenter] = useState({ lat: 0, lng: 0 })
 
-  const { data, hasNextPage, fetchNextPage, refetch } = useInfiniteQuery({
+  const { data, hasNextPage, fetchNextPage } = useInfiniteQuery({
     queryKey: ['search address', keyword],
     queryFn: ({ pageParam = 1 }) =>
       searchAddress(keyword, center.lat, center.lng, pageParam, 10),
@@ -101,10 +101,10 @@ const SearchAddress = ({ onChange, closeModal }: SearchAddressProps) => {
       </div>
       <div
         className={clsx(
-          'bg-blue-secondary text-blue-primary border-blue-secondary mt-2 flex w-full flex-row items-center justify-start rounded-t-lg border-2 px-4 py-1 text-lg font-semibold'
+          'bg-blue-secondary text-blue-primary border-blue-secondary mt-2 flex w-full flex-row items-center justify-start rounded-t-lg border-2 px-4 py-1 font-semibold'
         )}
       >
-        Suggested Addresses
+        검색 결과
       </div>
       <div className="hide-scrollbar border-blue-secondary relative flex h-full w-full flex-col overflow-y-scroll rounded-b-lg border-2">
         {data?.pages.map((page, pageIndex) => (

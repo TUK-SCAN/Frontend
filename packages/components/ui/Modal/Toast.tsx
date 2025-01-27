@@ -1,3 +1,5 @@
+'use client'
+
 import clsx from 'clsx'
 import React, { createContext, useContext, useState, useEffect } from 'react'
 import Icon from '../Icon/Icon'
@@ -31,7 +33,7 @@ export const ToastProvider: React.FC<{ children: React.ReactNode }> = ({
 
     setTimeout(() => {
       setToasts([])
-    }, 3000) // Auto-remove after 3 seconds
+    }, 3000)
   }
 
   return (
@@ -62,7 +64,6 @@ const ToastContainer: React.FC<{ toasts: Toast[] }> = ({ toasts }) => {
     }
   }, [toasts])
 
-  console.log(toasts)
   return (
     <div
       style={{ position: 'fixed', top: '20px', right: '20px', zIndex: 9999 }}
