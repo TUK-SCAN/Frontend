@@ -8,6 +8,7 @@ import Header from '@tookscan/components/ui/Header'
 import Footer from '@tookscan/components/ui/Footer'
 import Head from 'next/head'
 import { ModalProvider } from '@tookscan/components/app/ModalProvider'
+import { ToastProvider } from '@tookscan/components/ui/Modal/Toast'
 
 export default function RootLayout({ children }: LayoutProps) {
   return (
@@ -22,19 +23,21 @@ export default function RootLayout({ children }: LayoutProps) {
         {SpriteSheet}
         {CommonSpriteSheet}
         <QueryProvider>
-          <ModalProvider>
-            <div className="relative flex min-h-screen flex-col">
-              <div className="fixed left-0 top-0 z-50 w-full">
-                <Header type="default" />
+          <ToastProvider>
+            <ModalProvider>
+              <div className="relative flex min-h-screen flex-col">
+                <div className="fixed left-0 top-0 z-50 w-full">
+                  <Header type="default" />
+                </div>
+                <main className="flex-1 overflow-hidden pt-[90px]">
+                  {children}
+                </main>
+                <div className="mt-auto">
+                  <Footer />
+                </div>
               </div>
-              <main className="flex-1 overflow-hidden pt-[90px]">
-                {children}
-              </main>
-              <div className="mt-auto">
-                <Footer />
-              </div>
-            </div>
-          </ModalProvider>
+            </ModalProvider>
+          </ToastProvider>
         </QueryProvider>
       </body>
     </html>
