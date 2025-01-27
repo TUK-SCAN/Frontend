@@ -16,6 +16,7 @@ interface ApplyContextType {
   updateShippingInfo: (key: keyof ShippingInfo, value: string) => void
   terms: Terms
   setTerms: (terms: Terms) => void
+  ignoreBeforeUnload: React.MutableRefObject<boolean>
 }
 
 const ApplyContext = createContext<ApplyContextType | undefined>(undefined)
@@ -25,6 +26,7 @@ export const ApplyProvider = ({ children }: { children: ReactNode }) => {
   const [books, setBooks] = useState<Books[]>([])
   const shippingInfoRef = useRef<ShippingInfo>(initialShippingInfo)
   const [terms, setTerms] = useState<Terms>(initialTerms)
+  const ignoreBeforeUnload = useRef<boolean>(false)
 
   const updateShippingInfo = (key: keyof ShippingInfo, value: string) => {
     shippingInfoRef.current[key] = value
@@ -41,6 +43,7 @@ export const ApplyProvider = ({ children }: { children: ReactNode }) => {
         updateShippingInfo,
         terms,
         setTerms,
+        ignoreBeforeUnload,
       }}
     >
       {children}

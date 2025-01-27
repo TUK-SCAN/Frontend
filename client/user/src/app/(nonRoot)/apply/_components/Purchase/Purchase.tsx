@@ -6,9 +6,21 @@ import {
 } from '@/app/(nonRoot)/apply/_utils/calculateBookPrice'
 import clsx from 'clsx'
 import { BookInCart } from '@/app/(nonRoot)/apply/_components/index'
+import useModal from '@tookscan/hooks/useModal'
+import Link from 'next/link'
+
+const 주문번호 = '20204121721330' // TODO: 주문번호 API 연결
 
 const Purchase = () => {
-  const { books, pageIndex, setPageIndex, terms } = useApplyContext()
+  const {
+    books,
+    pageIndex,
+    setPageIndex,
+    terms,
+    ignoreBeforeUnload,
+    shippingInfoRef,
+  } = useApplyContext()
+  const { openModal, closeModal } = useModal()
 
   return (
     <div
@@ -54,13 +66,55 @@ const Purchase = () => {
         className="w-full"
         disabled={
           books.length === 0 ||
-          (!(terms.terms1 && terms.terms2 && terms.terms3) && pageIndex === 2)
+          (!(terms.terms1 && terms.terms2 && terms.terms3) &&
+            pageIndex === 2) ||
+          (pageIndex === 1 &&
+            !(
+              shippingInfoRef.current.recipient &&
+              shippingInfoRef.current.phone &&
+              shippingInfoRef.current.address &&
+              shippingInfoRef.current.addressDetail
+            ))
         }
         onClick={() => {
           if (pageIndex === 0 || pageIndex === 1) {
             setPageIndex((prev: number) => prev + 1)
           } else if (pageIndex === 2) {
-            console.log('결제하기')
+            openModal(
+              <div className="flex w-full flex-col">
+                <div className="pt-6 text-center text-lg font-bold text-black">
+                  스캔 신청
+                </div>
+                <div className="mt-4 h-[1px] w-full bg-gray-300" />
+                <p className="px-6 py-8">스캔신청을 하시겠습니까?</p>
+                <div className="flex gap-2">
+                  <Button
+                    variant="secondary"
+                    size="lg"
+                    onClick={closeModal}
+                    className="flex-1"
+                  >
+                    취소
+                  </Button>
+                  <Link
+                    href={`/apply/success?order=${주문번호}`}
+                    className="flex-1"
+                  >
+                    <Button
+                      variant="primary"
+                      size="lg"
+                      className="w-full"
+                      onClick={() => {
+                        closeModal()
+                        ignoreBeforeUnload.current = true
+                      }}
+                    >
+                      신청
+                    </Button>
+                  </Link>
+                </div>
+              </div>
+            )
           }
         }}
       >
